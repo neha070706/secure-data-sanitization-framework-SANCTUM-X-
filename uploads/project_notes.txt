@@ -1,0 +1,6 @@
+Project: Air-Gap Transfer
+Date: 2025-07-01
+Author: Operations Team
+
+This document summarises the Q3 infrastructure upgrade.
+All systems nominal. Transfer scheduled for 14:00 UTC.

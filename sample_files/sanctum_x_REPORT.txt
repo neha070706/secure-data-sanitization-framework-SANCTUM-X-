@@ -1,0 +1,293 @@
+========================================================================
+  SANCTUM-X BREACH INTELLIGENCE DATASET — HUMAN READABLE REPORT
+========================================================================
+
+[ BREACHABLE DATA — 35 ENTRIES ]
+
+  BD-001 | HIGH     | Risk: 72 | Full Legal Name
+       Category : personally_identifiable_information
+       Action   : redact
+       Vector   : Database dump, form export, employee roster leak
+
+  BD-002 | CRITICAL | Risk: 97 | Social Security Number (SSN)
+       Category : personally_identifiable_information
+       Action   : quarantine
+       Vector   : Tax records export, HR database dump, insurance claim files
+
+  BD-003 | HIGH     | Risk: 68 | Date of Birth
+       Category : personally_identifiable_information
+       Action   : redact
+       Vector   : Patient records, account creation logs, voter registration files
+
+  BD-004 | HIGH     | Risk: 75 | Home Address
+       Category : personally_identifiable_information
+       Action   : redact
+       Vector   : E-commerce order export, mailing list leak, delivery manifests
+
+  BD-005 | MEDIUM   | Risk: 55 | Email Address
+       Category : personally_identifiable_information
+       Action   : redact
+       Vector   : Marketing list dump, CRM export, newsletter subscriber leak
+
+  BD-006 | MEDIUM   | Risk: 52 | Phone Number
+       Category : personally_identifiable_information
+       Action   : redact
+       Vector   : Contact book export, SMS campaign lists, support ticket logs
+
+  BD-007 | CRITICAL | Risk:100 | Plaintext Password
+       Category : authentication_credentials
+       Action   : quarantine
+       Vector   : Source code commit, config file leak, log file containing debug output
+
+  BD-008 | CRITICAL | Risk: 98 | API Key / Secret Token
+       Category : authentication_credentials
+       Action   : quarantine
+       Vector   : GitHub repo push, environment variable dump, Docker image layer
+
+  BD-009 | CRITICAL | Risk:100 | Private Cryptographic Key
+       Category : authentication_credentials
+       Action   : quarantine
+       Vector   : Misconfigured web server, backup archive leak, container image
+
+  BD-010 | CRITICAL | Risk: 95 | Session Token / Cookie
+       Category : authentication_credentials
+       Action   : quarantine
+       Vector   : HTTP log export, browser debug export (.har), proxy log leak
+
+  BD-011 | CRITICAL | Risk: 96 | OAuth 2.0 Refresh Token
+       Category : authentication_credentials
+       Action   : quarantine
+       Vector   : Mobile app database export, OAuth debug log
+
+  BD-012 | CRITICAL | Risk: 99 | Credit / Debit Card Number (PAN)
+       Category : financial_data
+       Action   : quarantine
+       Vector   : POS terminal logs, payment processing dump, e-commerce order export
+
+  BD-013 | CRITICAL | Risk:100 | Card Verification Value (CVV)
+       Category : financial_data
+       Action   : quarantine
+       Vector   : Form submission log, payment API debug dump
+
+  BD-014 | CRITICAL | Risk: 97 | Bank Account Number + Routing Number
+       Category : financial_data
+       Action   : quarantine
+       Vector   : Payroll export, direct deposit setup files, wire transfer logs
+
+  BD-015 | HIGH     | Risk: 70 | Salary / Compensation Data
+       Category : financial_data
+       Action   : redact
+       Vector   : HR system export, payroll spreadsheet leak, performance review docs
+
+  BD-016 | CRITICAL | Risk: 92 | Medical Record Number (MRN)
+       Category : medical_health_data
+       Action   : quarantine
+       Vector   : EHR export, hospital billing files, insurance claims
+
+  BD-017 | CRITICAL | Risk: 94 | Diagnosis / ICD Code with Patient ID
+       Category : medical_health_data
+       Action   : quarantine
+       Vector   : Clinical notes export, insurance pre-authorization files
+
+  BD-018 | CRITICAL | Risk: 91 | Prescription / Medication Record
+       Category : medical_health_data
+       Action   : quarantine
+       Vector   : Pharmacy system export, controlled substance tracking files
+
+  BD-019 | CRITICAL | Risk: 98 | Biometric Data (Fingerprint / Retina)
+       Category : medical_health_data
+       Action   : quarantine
+       Vector   : Access control system export, border control database dump
+
+  BD-020 | HIGH     | Risk: 78 | Internal IP Address Range
+       Category : network_infrastructure
+       Action   : redact
+       Vector   : Network configuration export, Nmap scan results, device inventory
+
+  BD-021 | CRITICAL | Risk: 96 | VPN Credentials / Configuration
+       Category : network_infrastructure
+       Action   : quarantine
+       Vector   : Remote worker device export, IT helpdesk config export
+
+  BD-022 | HIGH     | Risk: 82 | Firewall Rules / ACL Configuration
+       Category : network_infrastructure
+       Action   : quarantine
+       Vector   : Backup config export, IT audit files, router/switch config backup
+
+  BD-023 | CRITICAL | Risk: 97 | Database Connection String
+       Category : source_code_intellectual_property
+       Action   : quarantine
+       Vector   : Source code leak, .env file committed to git, config export
+
+  BD-024 | HIGH     | Risk: 80 | Proprietary Algorithm / Trade Secret Code
+       Category : source_code_intellectual_property
+       Action   : quarantine
+       Vector   : Code repository export, compiled binary with embedded logic, insider threat
+
+  BD-025 | CRITICAL | Risk:100 | Cloud Provider Access Keys (AWS/Azure/GCP)
+       Category : source_code_intellectual_property
+       Action   : quarantine
+       Vector   : Committed .aws/credentials, terraform state file, CI/CD log
+
+  BD-026 | CRITICAL | Risk:100 | Classified Document Markings
+       Category : government_classified
+       Action   : quarantine
+       Vector   : Unauthorized air-gap transfer, USB exfiltration, insider leak
+
+  BD-027 | CRITICAL | Risk: 99 | Personnel Security Clearance Records
+       Category : government_classified
+       Action   : quarantine
+       Vector   : HR system export from SCIF, unauthorized access to adjudication database
+
+  BD-028 | CRITICAL | Risk: 98 | SCADA Network Topology / PLC Addresses
+       Category : industrial_control_systems
+       Action   : quarantine
+       Vector   : USB transfer from control room (Stuxnet-style), maintenance laptop export
+
+  BD-029 | CRITICAL | Risk:100 | Firmware Update Package (Unsigned/Modified)
+       Category : industrial_control_systems
+       Action   : quarantine
+       Vector   : Malicious firmware on USB (Fanny-style), compromised update server
+
+  BD-030 | CRITICAL | Risk: 99 | Executable with High Entropy Payload
+       Category : malware_indicators
+       Action   : quarantine
+       Vector   : Steganographic payload, macro-embedded document, hollowed PE
+
+  BD-031 | HIGH     | Risk: 85 | Macro-Enabled Office Document
+       Category : malware_indicators
+       Action   : quarantine
+       Vector   : Phishing attachment, USB drop, legitimate file with injected macro
+
+  BD-032 | CRITICAL | Risk:100 | Shell / Reverse Shell Script
+       Category : malware_indicators
+       Action   : quarantine
+       Vector   : Webshell upload, supply chain code injection, insider threat
+
+  BD-033 | HIGH     | Risk: 73 | GPS Coordinates Linked to Person
+       Category : location_tracking
+       Action   : redact
+       Vector   : App telemetry dump, photo EXIF export, geofencing logs
+
+  BD-034 | MEDIUM   | Risk: 58 | EXIF Metadata with GPS in Images
+       Category : location_tracking
+       Action   : strip_metadata
+       Vector   : Unstripped photo upload, image sharing without EXIF scrubbing
+
+  BD-035 | CRITICAL | Risk: 95 | Steganographic Payload in Image/Audio
+       Category : steganography
+       Action   : quarantine
+       Vector   : Air-gap data exfiltration via image channel, covert C2
+
+========================================================================
+
+[ NON-BREACHABLE DATA — 15 ENTRIES ]
+
+  NB-001 | SAFE     | Risk:  0 | Publicly Published News Article
+       Category : public_content
+       Safe Because: No private identifiers. Content is intentionally public. No confidentiality expectation.
+
+  NB-002 | SAFE     | Risk:  0 | Open Source License File
+       Category : public_content
+       Safe Because: Explicitly public, no proprietary content, no identifiers.
+
+  NB-003 | SAFE     | Risk:  1 | Public API Response (Non-PII)
+       Category : public_content
+       Safe Because: Aggregated, anonymized, and publicly available data.
+
+  NB-004 | SAFE     | Risk:  3 | Properly Anonymized Dataset
+       Category : anonymized_data
+       Safe Because: Re-identification risk is mathematically bounded. Compliant with HIPAA Safe Harbor.
+
+  NB-005 | SAFE     | Risk:  2 | Aggregated Statistical Summary
+       Category : anonymized_data
+       Safe Because: No individual can be identified from aggregate statistics alone.
+
+  NB-006 | LOW      | Risk:  8 | Properly Salted Password Hash (bcrypt/Argon2)
+       Category : hashed_data
+       Safe Because: Hash is computationally infeasible to reverse with proper salt and work factor.
+
+  NB-007 | SAFE     | Risk:  0 | AES-256-GCM Encrypted Bundle
+       Category : encrypted_payload
+       Safe Because: Ciphertext reveals no plaintext without key. GCM provides integrity assurance.
+
+  NB-008 | SAFE     | Risk:  2 | Application Performance Metric Log (No PII)
+       Category : operational_logs
+       Safe Because: System telemetry with no user data, no IP addresses, no session tokens.
+
+  NB-009 | SAFE     | Risk:  1 | Sanitized Error Log
+       Category : operational_logs
+       Safe Because: Post-sanitization: no credentials, no user IDs, no IP addresses remain.
+
+  NB-010 | SAFE     | Risk:  0 | Synthetic Test Dataset
+       Category : test_synthetic_data
+       Safe Because: Fabricated data. No real individuals. No linkage to real records.
+
+  NB-011 | SAFE     | Risk:  2 | Non-Sensitive Application Config (No Secrets)
+       Category : configuration_safe
+       Safe Because: No credentials, no IP addresses, no internal paths. Pure behavioral config.
+
+  NB-012 | SAFE     | Risk:  0 | Public Certificate (.crt / .pub)
+       Category : public_key_infrastructure
+       Safe Because: Public keys are designed to be shared. No cryptographic secret is revealed.
+
+  NB-013 | SAFE     | Risk:  0 | Public Technical Documentation / README
+       Category : documentation
+       Safe Because: Intended for public consumption. No proprietary or personal content.
+
+  NB-014 | LOW      | Risk:  5 | Properly Redacted Classified Document
+       Category : redacted_document
+       Safe Because: Classified content is irrecoverable if redaction is done at binary level, not just visual.
+
+  NB-015 | SAFE     | Risk:  1 | Tokenized Payment Data (PCI DSS Compliant)
+       Category : tokenized_data
+       Safe Because: Token has no mathematical relationship to original PAN. Vault is isolated.
+
+========================================================================
+
+[ TRAINING RECORDS — 15 ENTRIES ]
+
+  TRN-001 | FAIL | Risk: 88 | Signal:1.0 | employee_export_2024.csv
+       Outcome  : QUARANTINED
+
+  TRN-002 | FAIL | Risk:100 | Signal:1.0 | app_config_prod.env
+       Outcome  : QUARANTINED
+
+  TRN-003 | PASS | Risk:  0 | Signal:0.0 | public_pricing.json
+       Outcome  : PASSED_CLEAN
+
+  TRN-004 | FAIL | Risk: 97 | Signal:1.0 | patient_records_hl7.xml
+       Outcome  : QUARANTINED
+
+  TRN-005 | WARN | Risk: 58 | Signal:0.6 | photo_upload_unstripped.jpg
+       Outcome  : SANITIZED_PASSED
+
+  TRN-006 | FAIL | Risk:100 | Signal:1.0 | malware_dropper.pdf
+       Outcome  : QUARANTINED
+
+  TRN-007 | PASS | Risk:  0 | Signal:0.0 | synthetic_users_test.csv
+       Outcome  : PASSED_CLEAN
+
+  TRN-008 | FAIL | Risk: 82 | Signal:1.0 | network_config_backup.conf
+       Outcome  : QUARANTINED
+
+  TRN-009 | FAIL | Risk:100 | Signal:1.0 | firmware_update_v2.bin
+       Outcome  : QUARANTINED
+
+  TRN-010 | FAIL | Risk:100 | Signal:1.0 | credit_card_orders_q3.csv
+       Outcome  : QUARANTINED
+
+  TRN-011 | FAIL | Risk:100 | Signal:1.0 | classified_brief_TS_SCI.pdf
+       Outcome  : QUARANTINED
+
+  TRN-012 | PASS | Risk:  0 | Signal:0.0 | aes_encrypted_bundle.enc
+       Outcome  : PASSED_CLEAN
+
+  TRN-013 | FAIL | Risk: 85 | Signal:0.92 | macro_invoice_malicious.xlsm
+       Outcome  : QUARANTINED
+
+  TRN-014 | FAIL | Risk: 98 | Signal:1.0 | scada_topology_export.xml
+       Outcome  : QUARANTINED
+
+  TRN-015 | PASS | Risk:  2 | Signal:0.0 | app_metrics_perf.log
+       Outcome  : PASSED_CLEAN

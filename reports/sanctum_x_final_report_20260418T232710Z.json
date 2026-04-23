@@ -1,0 +1,318 @@
+{
+  "generated_utc": "2026-04-18T23:27:09.989332Z",
+  "uploaded_files": [
+    "CLEAN_field_intelligence_brief_20260418.pdf"
+  ],
+  "summary": {
+    "uploaded_count": 1,
+    "scanned_count": 1,
+    "quarantined_count": 0,
+    "sanitized_count": 1,
+    "package_created": true,
+    "delivery_success": false
+  },
+  "scan_results": {
+    "CLEAN_field_intelligence_brief_20260418.pdf": {
+      "path": "C:\\Users\\Neha\\OneDrive\\Desktop\\DSS_PROJECT\\secure-sanitization-framework\\secure-sanitization-framework\\uploads\\CLEAN_field_intelligence_brief_20260418.pdf",
+      "result": {
+        "filename": "CLEAN_field_intelligence_brief_20260418.pdf",
+        "extension": ".pdf",
+        "detected_type": ".pdf",
+        "size_mb": 0.007,
+        "sha256": "aa3814a3f8ff6a04a1ef3164fdab1747155beb87385224d129c04259e7a9bb2c",
+        "md5": "34457df6a4c6f9da87b06c84c87174c0",
+        "entropy": 6.3335,
+        "allowed": true,
+        "threats": [],
+        "warnings": [],
+        "verdict": "PASS",
+        "risk_score": 0,
+        "metadata_found": {},
+        "content_preview": {
+          "type": ".pdf",
+          "error": null,
+          "page_count": 0,
+          "text_snippet": "opensource D:20260418143531+00'00' D:20260418143531+00'00' DdRI$o`&>`U'>$nbgh1C61Iq\\M Q(.fST%P8&<YoGB:<,WaC2-_h&3b^MYLMMb#[K5.n1Q E3d$4\\Erfod0H<kr4<1p7[m,K!W<6XKFC,Dna8Z2?48?QVD]8h'o!Pd_m;AlZfaUeqL\"Z_\\&DaQ!e_G Z%pFI7Z*SF!6/[m.1.=SI0FG#`& =_+U/8%?;4]JEu7&:_[&q&o7pJaR=H4$EJ:JkeLOe4EM9d@kiSOJu72!Fi K-_",
+          "metadata_fields": {},
+          "has_javascript": false,
+          "has_forms": false,
+          "embedded_files": 0
+        },
+        "indicators": []
+      }
+    }
+  },
+  "sanitize_results": {
+    "CLEAN_field_intelligence_brief_20260418.pdf": {
+      "filename": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "actions": [
+        "pikepdf not available \u2014 file copied unchanged"
+      ],
+      "removed_items": [],
+      "output_path": "C:\\Users\\Neha\\OneDrive\\Desktop\\DSS_PROJECT\\secure-sanitization-framework\\secure-sanitization-framework\\sanitized\\CLEAN_field_intelligence_brief_20260418.pdf",
+      "sha256_in": "aa3814a3f8ff6a04a1ef3164fdab1747155beb87385224d129c04259e7a9bb2c",
+      "sha256_out": "aa3814a3f8ff6a04a1ef3164fdab1747155beb87385224d129c04259e7a9bb2c",
+      "size_in_mb": 0.007,
+      "size_out_mb": 0.007,
+      "success": true,
+      "error": null,
+      "sanitize_time_ms": 3.7
+    }
+  },
+  "package": {
+    "bundle_path": "C:\\Users\\Neha\\OneDrive\\Desktop\\DSS_PROJECT\\secure-sanitization-framework\\secure-sanitization-framework\\sanitized\\bundle_20260418T232709Z.zip",
+    "key_path": null,
+    "bundle_name": "bundle_20260418T232709Z.zip",
+    "key_name": "",
+    "manifest": {
+      "version": "2.0",
+      "created_utc": "20260418T232709Z",
+      "file_count": 1,
+      "encryption": "none",
+      "kdf": "random",
+      "files": [
+        {
+          "name": "CLEAN_field_intelligence_brief_20260418.pdf",
+          "sha256": "aa3814a3f8ff6a04a1ef3164fdab1747155beb87385224d129c04259e7a9bb2c",
+          "md5": "34457df6a4c6f9da87b06c84c87174c0",
+          "size_bytes": 7845
+        }
+      ],
+      "bundle_sha256": "3b90dd65bbfc2795028e4e841465203156a58d8fa12b4d3eeb00d22bc2d6bef6"
+    },
+    "manifest_path": "C:\\Users\\Neha\\OneDrive\\Desktop\\DSS_PROJECT\\secure-sanitization-framework\\secure-sanitization-framework\\sanitized\\bundle_20260418T232709Z.manifest.json"
+  },
+  "delivery": {
+    "success": false,
+    "mode": "skipped",
+    "error": "Bundle was created without a key file"
+  },
+  "audit_tail": [
+    {
+      "timestamp": "2026-04-18T18:25:24.180689+00:00",
+      "action": "QUARANTINE",
+      "file": "THREAT_exfil_payload_operative.txt",
+      "detail": "Base64 payload execution; Encoded PowerShell command; Path traversal sequence (zip-slip)",
+      "result": "FAIL",
+      "prev_hash": "79fc7195592de38b58017518096b6fe011ffd45fd0c2a1f7d4a0e09271f0e977",
+      "entry_hash": "34dfec0b6920536c56c218cdec113e1d5a6a47d126864c0d642963db1f727aca"
+    },
+    {
+      "timestamp": "2026-04-18T18:29:34.583184+00:00",
+      "action": "PACKAGE",
+      "file": "bundle_20260418T182934Z.zip",
+      "detail": "files:1 algo:none sha256:7e5f01c0a1ec4123",
+      "result": "PASS",
+      "prev_hash": "34dfec0b6920536c56c218cdec113e1d5a6a47d126864c0d642963db1f727aca",
+      "entry_hash": "5dee024519ccbe0af0a6c069f238201f7f4bbfa2e5ac05890082cc89039e5359"
+    },
+    {
+      "timestamp": "2026-04-18T18:30:14.688393+00:00",
+      "action": "PACKAGE",
+      "file": "bundle_20260418T183014Z.zip",
+      "detail": "files:1 algo:none sha256:82a0b7284fdc04ea",
+      "result": "PASS",
+      "prev_hash": "5dee024519ccbe0af0a6c069f238201f7f4bbfa2e5ac05890082cc89039e5359",
+      "entry_hash": "45ab3ad7a7d95df64d83d90e773704f1006e6381fa83133ef96881a836b326b6"
+    },
+    {
+      "timestamp": "2026-04-18T18:30:19.144092+00:00",
+      "action": "PACKAGE",
+      "file": "bundle_20260418T183019Z.zip",
+      "detail": "files:1 algo:none sha256:b0c18bbf6f061fa3",
+      "result": "PASS",
+      "prev_hash": "45ab3ad7a7d95df64d83d90e773704f1006e6381fa83133ef96881a836b326b6",
+      "entry_hash": "390b27100a1a7e922ba2f88348710e01ab1d4621edbad3c68df293e91a5bea39"
+    },
+    {
+      "timestamp": "2026-04-18T19:40:11.300185+00:00",
+      "action": "INGEST",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "SHA256:aa3814a3f8ff6a04 entropy:6.3335 risk:0",
+      "result": "PASS",
+      "prev_hash": "390b27100a1a7e922ba2f88348710e01ab1d4621edbad3c68df293e91a5bea39",
+      "entry_hash": "25db1ba7e056ab6c7bdc682e2f43ae9480ed66972f0b0cdff4201445d37f719f"
+    },
+    {
+      "timestamp": "2026-04-18T19:40:11.304618+00:00",
+      "action": "SCAN",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "risk:0 inds:0",
+      "result": "PASS",
+      "prev_hash": "25db1ba7e056ab6c7bdc682e2f43ae9480ed66972f0b0cdff4201445d37f719f",
+      "entry_hash": "bac915880ab1fbf47c4eb7b3a9260037c5e49311bfa9fa9e8a31d66ec8736392"
+    },
+    {
+      "timestamp": "2026-04-18T19:40:32.636152+00:00",
+      "action": "INGEST",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "SHA256:aa3814a3f8ff6a04 entropy:6.3335 risk:0",
+      "result": "PASS",
+      "prev_hash": "bac915880ab1fbf47c4eb7b3a9260037c5e49311bfa9fa9e8a31d66ec8736392",
+      "entry_hash": "5bdbda3847bfd629a5a03f7abd04eb33dc459e8f6cf0a074ee46f9e59f647951"
+    },
+    {
+      "timestamp": "2026-04-18T19:40:32.654000+00:00",
+      "action": "SCAN",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "risk:0 inds:0",
+      "result": "PASS",
+      "prev_hash": "5bdbda3847bfd629a5a03f7abd04eb33dc459e8f6cf0a074ee46f9e59f647951",
+      "entry_hash": "937605cd6ed44a6a4349b512b67d51d83f1b2fcf4b647568cdb58a49430f8f4a"
+    },
+    {
+      "timestamp": "2026-04-18T19:40:36.330533+00:00",
+      "action": "SANITIZE",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "actions:1 removed:0 time:17.7ms",
+      "result": "PASS",
+      "prev_hash": "937605cd6ed44a6a4349b512b67d51d83f1b2fcf4b647568cdb58a49430f8f4a",
+      "entry_hash": "53dde4db89df3d5caad0df6b6588c6c8677e6000d44e9714a9482bc4d1ab2b5a"
+    },
+    {
+      "timestamp": "2026-04-18T19:40:50.237785+00:00",
+      "action": "PACKAGE",
+      "file": "bundle_20260418T194050Z.zip",
+      "detail": "files:1 algo:none sha256:4f7c727571c597e4",
+      "result": "PASS",
+      "prev_hash": "53dde4db89df3d5caad0df6b6588c6c8677e6000d44e9714a9482bc4d1ab2b5a",
+      "entry_hash": "7ac4f2ce5fc6928964e1e6731ccfa690c9475e9327986c1a2c73911eeedda7a6"
+    },
+    {
+      "timestamp": "2026-04-18T19:50:09.630058+00:00",
+      "action": "INGEST",
+      "file": "THREAT_exfil_payload_operative.txt",
+      "detail": "SHA256:c1e400b3e6c7ddfe entropy:5.7578 risk:100",
+      "result": "PASS",
+      "prev_hash": "7ac4f2ce5fc6928964e1e6731ccfa690c9475e9327986c1a2c73911eeedda7a6",
+      "entry_hash": "bc180d40a2cb644aeb825bc592c8f0f88fcab7c89063f0ca8b2e7acb90274ccb"
+    },
+    {
+      "timestamp": "2026-04-18T19:50:09.642321+00:00",
+      "action": "QUARANTINE",
+      "file": "THREAT_exfil_payload_operative.txt",
+      "detail": "Base64 payload execution; Encoded PowerShell command; Path traversal sequence (zip-slip)",
+      "result": "FAIL",
+      "prev_hash": "bc180d40a2cb644aeb825bc592c8f0f88fcab7c89063f0ca8b2e7acb90274ccb",
+      "entry_hash": "d5c8f71c85bb068ed9a1f6c3416b59e0e7dbce1152003de2e56447ba1c1240cc"
+    },
+    {
+      "timestamp": "2026-04-18T20:03:30.092694+00:00",
+      "action": "INGEST",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "SHA256:aa3814a3f8ff6a04 entropy:6.3335 risk:0",
+      "result": "PASS",
+      "prev_hash": "d5c8f71c85bb068ed9a1f6c3416b59e0e7dbce1152003de2e56447ba1c1240cc",
+      "entry_hash": "9f0fa5552ffbf1d829b93bcf2e00f1ef9a0a28ad049e429e8ad7d2a6985af81c"
+    },
+    {
+      "timestamp": "2026-04-18T20:03:30.095973+00:00",
+      "action": "SCAN",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "risk:0 inds:0",
+      "result": "PASS",
+      "prev_hash": "9f0fa5552ffbf1d829b93bcf2e00f1ef9a0a28ad049e429e8ad7d2a6985af81c",
+      "entry_hash": "d501dafc347a2492849f834bbfe5d43c834a423eb1580a6391ca63973cf7b543"
+    },
+    {
+      "timestamp": "2026-04-18T20:03:50.299725+00:00",
+      "action": "SANITIZE",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "actions:1 removed:0 time:5.0ms",
+      "result": "PASS",
+      "prev_hash": "d501dafc347a2492849f834bbfe5d43c834a423eb1580a6391ca63973cf7b543",
+      "entry_hash": "a00017729a3d2958e94e0fe4150ea0b85d91ad08e197d3b60f0cc324cbc270e5"
+    },
+    {
+      "timestamp": "2026-04-18T20:04:02.493605+00:00",
+      "action": "PACKAGE",
+      "file": "bundle_20260418T200402Z.zip",
+      "detail": "files:1 algo:none sha256:20eb230dfa6259f3",
+      "result": "PASS",
+      "prev_hash": "a00017729a3d2958e94e0fe4150ea0b85d91ad08e197d3b60f0cc324cbc270e5",
+      "entry_hash": "f1220e7aebd0eb32884aae41000ca758e14f620e16e3b988a013fc7c96a645f6"
+    },
+    {
+      "timestamp": "2026-04-18T20:04:23.169567+00:00",
+      "action": "PACKAGE",
+      "file": "bundle_20260418T200423Z.zip",
+      "detail": "files:1 algo:none sha256:d2e09c50152ea954",
+      "result": "PASS",
+      "prev_hash": "f1220e7aebd0eb32884aae41000ca758e14f620e16e3b988a013fc7c96a645f6",
+      "entry_hash": "52349f27d1fa2bec0ec1c1efaa492f9360b28949a8b865ff5d61d1bc55347b4e"
+    },
+    {
+      "timestamp": "2026-04-18T23:05:47.862019+00:00",
+      "action": "INGEST",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "SHA256:aa3814a3f8ff6a04 entropy:6.3335 risk:0",
+      "result": "PASS",
+      "prev_hash": "52349f27d1fa2bec0ec1c1efaa492f9360b28949a8b865ff5d61d1bc55347b4e",
+      "entry_hash": "f1b3dde892635297556fb1954a9105885634dcc94b8ae4c3a8e09ae6f20342a4"
+    },
+    {
+      "timestamp": "2026-04-18T23:05:47.865850+00:00",
+      "action": "SCAN",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "risk:0 inds:0",
+      "result": "PASS",
+      "prev_hash": "f1b3dde892635297556fb1954a9105885634dcc94b8ae4c3a8e09ae6f20342a4",
+      "entry_hash": "fbf7ac10dcd77eca561dc0c7c87a7e44be46ac96f06c020d5f8da2b2e404685c"
+    },
+    {
+      "timestamp": "2026-04-18T23:05:59.936449+00:00",
+      "action": "SANITIZE",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "actions:1 removed:0 time:5.0ms",
+      "result": "PASS",
+      "prev_hash": "fbf7ac10dcd77eca561dc0c7c87a7e44be46ac96f06c020d5f8da2b2e404685c",
+      "entry_hash": "5a7262a3bd7b9e34278e51b93093914a06846e1def25aa8130c2c8d6c41140f8"
+    },
+    {
+      "timestamp": "2026-04-18T23:06:13.529953+00:00",
+      "action": "PACKAGE",
+      "file": "bundle_20260418T230613Z.zip",
+      "detail": "files:1 algo:none sha256:aac1593b7818ee60",
+      "result": "PASS",
+      "prev_hash": "5a7262a3bd7b9e34278e51b93093914a06846e1def25aa8130c2c8d6c41140f8",
+      "entry_hash": "29b65d94cf3a355167a374cd746fd6b9c702b716b61f13bafbc3819433c3d1c7"
+    },
+    {
+      "timestamp": "2026-04-18T23:27:09.923060+00:00",
+      "action": "INGEST",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "SHA256:aa3814a3f8ff6a04 entropy:6.3335 risk:0",
+      "result": "PASS",
+      "prev_hash": "29b65d94cf3a355167a374cd746fd6b9c702b716b61f13bafbc3819433c3d1c7",
+      "entry_hash": "849ff58b79fdfe5a9eb1de056a9737d9ff1d6a6a739c6fe13469893a30e5b760"
+    },
+    {
+      "timestamp": "2026-04-18T23:27:09.929015+00:00",
+      "action": "SCAN",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "risk:0 inds:0",
+      "result": "PASS",
+      "prev_hash": "849ff58b79fdfe5a9eb1de056a9737d9ff1d6a6a739c6fe13469893a30e5b760",
+      "entry_hash": "6ca5a883198370513a91fad2e1cfcdcb80cef93397df60a3dee419d7a0ac0b90"
+    },
+    {
+      "timestamp": "2026-04-18T23:27:09.943043+00:00",
+      "action": "SANITIZE",
+      "file": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "detail": "actions:1 removed:0 time:3.7ms",
+      "result": "PASS",
+      "prev_hash": "6ca5a883198370513a91fad2e1cfcdcb80cef93397df60a3dee419d7a0ac0b90",
+      "entry_hash": "afb9d9560ad3ff1e512d0a715b2dc4275261f07e242b521006944a5abddac33e"
+    },
+    {
+      "timestamp": "2026-04-18T23:27:09.985195+00:00",
+      "action": "PACKAGE",
+      "file": "bundle_20260418T232709Z.zip",
+      "detail": "files:1 algo:none sha256:3b90dd65bbfc2795",
+      "result": "PASS",
+      "prev_hash": "afb9d9560ad3ff1e512d0a715b2dc4275261f07e242b521006944a5abddac33e",
+      "entry_hash": "0a136439c60017b19fb96041939c79b5c5b4df1446ac912b933e9fd7c0907381"
+    }
+  ],
+  "pipeline_error": null
+}

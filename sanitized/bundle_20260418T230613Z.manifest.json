@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "created_utc": "20260418T230613Z",
+  "file_count": 1,
+  "encryption": "none",
+  "kdf": "random",
+  "files": [
+    {
+      "name": "CLEAN_field_intelligence_brief_20260418.pdf",
+      "sha256": "aa3814a3f8ff6a04a1ef3164fdab1747155beb87385224d129c04259e7a9bb2c",
+      "md5": "34457df6a4c6f9da87b06c84c87174c0",
+      "size_bytes": 7845
+    }
+  ],
+  "bundle_sha256": "aac1593b7818ee6004c67cf3e01f0542b75299fe3cd966989428c46079fc1319"
+}

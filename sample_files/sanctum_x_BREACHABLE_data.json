@@ -1,0 +1,1788 @@
+{
+  "dataset_meta": {
+    "name": "SANCTUM-X Breachable Data Registry",
+    "version": "1.0",
+    "generated_utc": "2026-04-19T00:00:00Z",
+    "description": "All breachable data types with threat levels, regex patterns, and learning weights",
+    "total_entries": 420,
+    "schema_version": "2.1",
+    "training_compatible": true,
+    "learned_patterns_seed": true
+  },
+  "breach_taxonomy": {
+    "CRITICAL": {
+      "risk_score_range": [
+        85,
+        100
+      ],
+      "quarantine": true,
+      "sanitizable": false
+    },
+    "HIGH": {
+      "risk_score_range": [
+        65,
+        84
+      ],
+      "quarantine": true,
+      "sanitizable": true
+    },
+    "MEDIUM": {
+      "risk_score_range": [
+        35,
+        64
+      ],
+      "quarantine": false,
+      "sanitizable": true
+    },
+    "LOW": {
+      "risk_score_range": [
+        10,
+        34
+      ],
+      "quarantine": false,
+      "sanitizable": true
+    },
+    "SAFE": {
+      "risk_score_range": [
+        0,
+        9
+      ],
+      "quarantine": false,
+      "sanitizable": false
+    }
+  },
+  "compliance_mapping": {
+    "GDPR": {
+      "applicable_breach_ids": [
+        "BD-001",
+        "BD-002",
+        "BD-003",
+        "BD-004",
+        "BD-005",
+        "BD-006",
+        "BD-019",
+        "BD-033",
+        "BD-034"
+      ],
+      "description": "EU General Data Protection Regulation \u2014 personal data of EU residents",
+      "max_fine": "4% of global annual revenue or \u20ac20M"
+    },
+    "HIPAA": {
+      "applicable_breach_ids": [
+        "BD-016",
+        "BD-017",
+        "BD-018",
+        "BD-019"
+      ],
+      "description": "US Health Insurance Portability and Accountability Act \u2014 Protected Health Information",
+      "max_fine": "$1.9M per violation category per year"
+    },
+    "PCI_DSS": {
+      "applicable_breach_ids": [
+        "BD-012",
+        "BD-013",
+        "BD-014"
+      ],
+      "description": "Payment Card Industry Data Security Standard",
+      "max_fine": "$100,000/month until compliant; card brand fines"
+    },
+    "SOX": {
+      "applicable_breach_ids": [
+        "BD-014",
+        "BD-015",
+        "BD-024"
+      ],
+      "description": "Sarbanes-Oxley Act \u2014 financial record integrity for public companies",
+      "max_fine": "Up to $5M and/or 20 years imprisonment"
+    },
+    "FISMA": {
+      "applicable_breach_ids": [
+        "BD-026",
+        "BD-027",
+        "BD-028"
+      ],
+      "description": "Federal Information Security Modernization Act \u2014 US federal systems",
+      "max_fine": "Loss of federal funding; criminal charges"
+    },
+    "CCPA": {
+      "applicable_breach_ids": [
+        "BD-001",
+        "BD-004",
+        "BD-005",
+        "BD-006",
+        "BD-033"
+      ],
+      "description": "California Consumer Privacy Act \u2014 California residents' personal data",
+      "max_fine": "$7,500 per intentional violation"
+    }
+  },
+  "entropy_baselines_by_filetype": {
+    ".txt": {
+      "safe_max": 4.5,
+      "warn_threshold": 5.5,
+      "critical_threshold": 7.0
+    },
+    ".csv": {
+      "safe_max": 4.2,
+      "warn_threshold": 5.0,
+      "critical_threshold": 6.5
+    },
+    ".json": {
+      "safe_max": 4.8,
+      "warn_threshold": 5.5,
+      "critical_threshold": 6.8
+    },
+    ".xml": {
+      "safe_max": 4.3,
+      "warn_threshold": 5.2,
+      "critical_threshold": 6.5
+    },
+    ".pdf": {
+      "safe_max": 6.5,
+      "warn_threshold": 7.2,
+      "critical_threshold": 7.7
+    },
+    ".jpg": {
+      "safe_max": 7.5,
+      "warn_threshold": 7.8,
+      "critical_threshold": 7.95
+    },
+    ".png": {
+      "safe_max": 7.0,
+      "warn_threshold": 7.5,
+      "critical_threshold": 7.9
+    },
+    ".exe": {
+      "safe_max": 6.0,
+      "warn_threshold": 7.0,
+      "critical_threshold": 7.5
+    },
+    ".bin": {
+      "safe_max": 7.0,
+      "warn_threshold": 7.7,
+      "critical_threshold": 7.95
+    },
+    ".zip": {
+      "safe_max": 7.8,
+      "warn_threshold": 7.9,
+      "critical_threshold": 7.99
+    },
+    ".py": {
+      "safe_max": 4.0,
+      "warn_threshold": 5.0,
+      "critical_threshold": 6.5
+    },
+    ".js": {
+      "safe_max": 4.2,
+      "warn_threshold": 5.2,
+      "critical_threshold": 6.8
+    },
+    ".env": {
+      "safe_max": 4.5,
+      "warn_threshold": 5.5,
+      "critical_threshold": 7.0
+    },
+    ".conf": {
+      "safe_max": 4.0,
+      "warn_threshold": 5.0,
+      "critical_threshold": 6.5
+    },
+    ".docx": {
+      "safe_max": 6.2,
+      "warn_threshold": 7.0,
+      "critical_threshold": 7.6
+    },
+    ".xlsx": {
+      "safe_max": 6.5,
+      "warn_threshold": 7.2,
+      "critical_threshold": 7.7
+    }
+  },
+  "threat_rate_by_filetype": {
+    ".env": {
+      "historical_threat_rate": 0.94,
+      "common_threats": [
+        "API_KEY",
+        "PLAINTEXT_PASSWORD",
+        "DB_CONN_STRING"
+      ]
+    },
+    ".csv": {
+      "historical_threat_rate": 0.61,
+      "common_threats": [
+        "PII",
+        "SSN",
+        "CREDIT_CARD",
+        "EMAIL"
+      ]
+    },
+    ".pdf": {
+      "historical_threat_rate": 0.45,
+      "common_threats": [
+        "CLASSIFIED_MARKING",
+        "HIGH_ENTROPY_PAYLOAD",
+        "MALWARE_EMBED"
+      ]
+    },
+    ".json": {
+      "historical_threat_rate": 0.38,
+      "common_threats": [
+        "API_KEY",
+        "SESSION_TOKEN",
+        "PII"
+      ]
+    },
+    ".xml": {
+      "historical_threat_rate": 0.42,
+      "common_threats": [
+        "PHI_HL7",
+        "SCADA_CONFIG",
+        "PII"
+      ]
+    },
+    ".exe": {
+      "historical_threat_rate": 0.88,
+      "common_threats": [
+        "MALWARE",
+        "PE_PAYLOAD",
+        "HIGH_ENTROPY"
+      ]
+    },
+    ".bin": {
+      "historical_threat_rate": 0.82,
+      "common_threats": [
+        "FIRMWARE",
+        "UNSIGNED_PAYLOAD",
+        "STEGANOGRAPHY"
+      ]
+    },
+    ".conf": {
+      "historical_threat_rate": 0.71,
+      "common_threats": [
+        "CREDENTIALS",
+        "INTERNAL_IPS",
+        "VPN_CONFIG"
+      ]
+    },
+    ".docx": {
+      "historical_threat_rate": 0.33,
+      "common_threats": [
+        "CLASSIFIED_MARKING",
+        "PII",
+        "MACRO_EMBED"
+      ]
+    },
+    ".xlsm": {
+      "historical_threat_rate": 0.79,
+      "common_threats": [
+        "VBA_MACRO",
+        "AUTO_OPEN",
+        "SHELL_CALL"
+      ]
+    },
+    ".py": {
+      "historical_threat_rate": 0.55,
+      "common_threats": [
+        "HARDCODED_SECRET",
+        "DB_CONN_STRING",
+        "SHELL_EXEC"
+      ]
+    },
+    ".log": {
+      "historical_threat_rate": 0.28,
+      "common_threats": [
+        "SESSION_TOKEN",
+        "IP_ADDRESS",
+        "PII_IN_LOGS"
+      ]
+    },
+    ".jpg": {
+      "historical_threat_rate": 0.22,
+      "common_threats": [
+        "EXIF_GPS",
+        "STEGANOGRAPHY",
+        "DEVICE_INFO"
+      ]
+    },
+    ".png": {
+      "historical_threat_rate": 0.25,
+      "common_threats": [
+        "STEGANOGRAPHY",
+        "LSB_PAYLOAD"
+      ]
+    },
+    ".sh": {
+      "historical_threat_rate": 0.67,
+      "common_threats": [
+        "REVERSE_SHELL",
+        "CREDENTIALS",
+        "PRIVILEGE_ESCALATION"
+      ]
+    }
+  },
+  "breachable_data": [
+    {
+      "id": "BD-001",
+      "category": "personally_identifiable_information",
+      "label": "Full Legal Name",
+      "description": "First, middle, last name of a real individual",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "database_system",
+        "medical_system",
+        "financial_system",
+        "government_classified"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 72,
+      "regex_patterns": [
+        "[A-Z][a-z]+ [A-Z][a-z]+",
+        "\\bName\\s*:\\s*\\S+"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".json",
+        ".xml",
+        ".txt",
+        ".pdf",
+        ".docx",
+        ".xlsx"
+      ],
+      "sanitize_action": "redact",
+      "learning_weight": 0.82,
+      "example_breach_vector": "Database dump, form export, employee roster leak",
+      "indicators": [
+        "PII",
+        "GDPR_VIOLATION",
+        "HIPAA_VIOLATION"
+      ]
+    },
+    {
+      "id": "BD-002",
+      "category": "personally_identifiable_information",
+      "label": "Social Security Number (SSN)",
+      "description": "9-digit US government identifier",
+      "applicable_apps": [
+        "database_system",
+        "financial_system",
+        "government_classified",
+        "medical_system"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 97,
+      "regex_patterns": [
+        "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+        "\\b\\d{9}\\b"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".txt",
+        ".pdf",
+        ".docx",
+        ".json",
+        ".xlsx",
+        ".xml"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.99,
+      "example_breach_vector": "Tax records export, HR database dump, insurance claim files",
+      "indicators": [
+        "CRITICAL_PII",
+        "IDENTITY_THEFT_RISK",
+        "FEDERAL_VIOLATION"
+      ]
+    },
+    {
+      "id": "BD-003",
+      "category": "personally_identifiable_information",
+      "label": "Date of Birth",
+      "description": "Full or partial birth date",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "medical_system",
+        "financial_system",
+        "government_classified"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 68,
+      "regex_patterns": [
+        "\\b\\d{1,2}/\\d{1,2}/\\d{2,4}\\b",
+        "DOB\\s*:\\s*",
+        "Date of Birth"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".json",
+        ".xml",
+        ".txt",
+        ".pdf"
+      ],
+      "sanitize_action": "redact",
+      "learning_weight": 0.78,
+      "example_breach_vector": "Patient records, account creation logs, voter registration files",
+      "indicators": [
+        "PII",
+        "AGE_DISCLOSURE",
+        "GDPR_VIOLATION"
+      ]
+    },
+    {
+      "id": "BD-004",
+      "category": "personally_identifiable_information",
+      "label": "Home Address",
+      "description": "Physical street address including city, state, zip",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "database_system",
+        "financial_system"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 75,
+      "regex_patterns": [
+        "\\d{1,5}\\s[A-Za-z]+\\s(?:St|Ave|Blvd|Rd|Dr|Ln)",
+        "\\b[A-Z]{2}\\s\\d{5}\\b"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".json",
+        ".txt",
+        ".pdf",
+        ".docx"
+      ],
+      "sanitize_action": "redact",
+      "learning_weight": 0.8,
+      "example_breach_vector": "E-commerce order export, mailing list leak, delivery manifests",
+      "indicators": [
+        "PII",
+        "LOCATION_DISCLOSURE",
+        "STALKING_RISK"
+      ]
+    },
+    {
+      "id": "BD-005",
+      "category": "personally_identifiable_information",
+      "label": "Email Address",
+      "description": "Personal or work email address",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "api_service",
+        "database_system"
+      ],
+      "threat_level": "MEDIUM",
+      "risk_score": 55,
+      "regex_patterns": [
+        "[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".json",
+        ".txt",
+        ".xml",
+        ".html",
+        ".eml"
+      ],
+      "sanitize_action": "redact",
+      "learning_weight": 0.65,
+      "example_breach_vector": "Marketing list dump, CRM export, newsletter subscriber leak",
+      "indicators": [
+        "PII",
+        "PHISHING_VECTOR",
+        "SPAM_LIST"
+      ]
+    },
+    {
+      "id": "BD-006",
+      "category": "personally_identifiable_information",
+      "label": "Phone Number",
+      "description": "Mobile or landline phone number",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "database_system",
+        "financial_system"
+      ],
+      "threat_level": "MEDIUM",
+      "risk_score": 52,
+      "regex_patterns": [
+        "\\b\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}\\b",
+        "\\+1\\s?\\d{10}"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".json",
+        ".txt",
+        ".pdf"
+      ],
+      "sanitize_action": "redact",
+      "learning_weight": 0.62,
+      "example_breach_vector": "Contact book export, SMS campaign lists, support ticket logs",
+      "indicators": [
+        "PII",
+        "PHONE_DISCLOSURE",
+        "SIM_SWAP_RISK"
+      ]
+    },
+    {
+      "id": "BD-007",
+      "category": "authentication_credentials",
+      "label": "Plaintext Password",
+      "description": "Unencrypted user password stored or transmitted in clear",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "api_service",
+        "desktop_application",
+        "database_system"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 100,
+      "regex_patterns": [
+        "password\\s*=\\s*['\"][^'\"]+['\"]",
+        "pwd\\s*:\\s*\\S+",
+        "pass\\s*=\\s*\\S+"
+      ],
+      "file_types_at_risk": [
+        ".py",
+        ".js",
+        ".env",
+        ".conf",
+        ".ini",
+        ".txt",
+        ".sh",
+        ".bat",
+        ".yml",
+        ".yaml",
+        ".json"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "Source code commit, config file leak, log file containing debug output",
+      "indicators": [
+        "CRITICAL_CREDENTIAL",
+        "HARDCODED_SECRET",
+        "AUTH_BYPASS_RISK"
+      ]
+    },
+    {
+      "id": "BD-008",
+      "category": "authentication_credentials",
+      "label": "API Key / Secret Token",
+      "description": "Bearer tokens, API keys, secret keys for service authentication",
+      "applicable_apps": [
+        "web_application",
+        "api_service",
+        "cloud_infrastructure",
+        "desktop_application"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 98,
+      "regex_patterns": [
+        "api[_-]?key\\s*=\\s*['\"][A-Za-z0-9+/=]{20,}['\"]",
+        "sk-[A-Za-z0-9]{48}",
+        "AKIA[0-9A-Z]{16}"
+      ],
+      "file_types_at_risk": [
+        ".env",
+        ".json",
+        ".py",
+        ".js",
+        ".yml",
+        ".yaml",
+        ".txt",
+        ".conf"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.99,
+      "example_breach_vector": "GitHub repo push, environment variable dump, Docker image layer",
+      "indicators": [
+        "CRITICAL_CREDENTIAL",
+        "API_KEY_EXPOSURE",
+        "LATERAL_MOVEMENT_RISK"
+      ]
+    },
+    {
+      "id": "BD-009",
+      "category": "authentication_credentials",
+      "label": "Private Cryptographic Key",
+      "description": "RSA/EC/PGP private keys in PEM or DER format",
+      "applicable_apps": [
+        "web_application",
+        "api_service",
+        "cloud_infrastructure",
+        "government_classified",
+        "financial_system"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 100,
+      "regex_patterns": [
+        "-----BEGIN (RSA |EC |OPENSSH |PGP )?PRIVATE KEY-----",
+        "-----BEGIN CERTIFICATE-----"
+      ],
+      "file_types_at_risk": [
+        ".pem",
+        ".key",
+        ".p12",
+        ".pfx",
+        ".asc",
+        ".txt"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "Misconfigured web server, backup archive leak, container image",
+      "indicators": [
+        "CRITICAL_CRYPTOGRAPHIC",
+        "PKI_COMPROMISE",
+        "IMPERSONATION_RISK"
+      ]
+    },
+    {
+      "id": "BD-010",
+      "category": "authentication_credentials",
+      "label": "Session Token / Cookie",
+      "description": "Active session identifiers that allow account hijacking",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "api_service"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 95,
+      "regex_patterns": [
+        "sessionid=[A-Za-z0-9]+",
+        "JSESSIONID=[A-Za-z0-9]+",
+        "auth_token=[A-Za-z0-9._-]+"
+      ],
+      "file_types_at_risk": [
+        ".log",
+        ".txt",
+        ".har",
+        ".json"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.97,
+      "example_breach_vector": "HTTP log export, browser debug export (.har), proxy log leak",
+      "indicators": [
+        "CRITICAL_CREDENTIAL",
+        "SESSION_HIJACK_RISK",
+        "REPLAY_ATTACK"
+      ]
+    },
+    {
+      "id": "BD-011",
+      "category": "authentication_credentials",
+      "label": "OAuth 2.0 Refresh Token",
+      "description": "Long-lived OAuth tokens that regenerate access without password",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "api_service",
+        "cloud_infrastructure"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 96,
+      "regex_patterns": [
+        "refresh_token['\"]?\\s*:\\s*['\"][A-Za-z0-9._-]{40,}"
+      ],
+      "file_types_at_risk": [
+        ".json",
+        ".db",
+        ".sqlite",
+        ".log"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.98,
+      "example_breach_vector": "Mobile app database export, OAuth debug log",
+      "indicators": [
+        "CRITICAL_CREDENTIAL",
+        "PERSISTENT_ACCESS",
+        "OAUTH_COMPROMISE"
+      ]
+    },
+    {
+      "id": "BD-012",
+      "category": "financial_data",
+      "label": "Credit / Debit Card Number (PAN)",
+      "description": "16-digit primary account number for payment cards",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "financial_system",
+        "database_system"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 99,
+      "regex_patterns": [
+        "\\b4[0-9]{12}(?:[0-9]{3})?\\b",
+        "\\b5[1-5][0-9]{14}\\b",
+        "\\b3[47][0-9]{13}\\b"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".txt",
+        ".pdf",
+        ".json",
+        ".xml",
+        ".log"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "POS terminal logs, payment processing dump, e-commerce order export",
+      "indicators": [
+        "CRITICAL_PCI_DSS",
+        "CARD_FRAUD_RISK",
+        "PCI_VIOLATION"
+      ]
+    },
+    {
+      "id": "BD-013",
+      "category": "financial_data",
+      "label": "Card Verification Value (CVV)",
+      "description": "3-4 digit card security code",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "financial_system"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 100,
+      "regex_patterns": [
+        "cvv\\s*=\\s*\\d{3,4}",
+        "cvc\\s*:\\s*\\d{3,4}",
+        "security.?code.{0,10}\\d{3,4}"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".txt",
+        ".log",
+        ".json"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "Form submission log, payment API debug dump",
+      "indicators": [
+        "CRITICAL_PCI_DSS",
+        "CARD_NOT_PRESENT_FRAUD",
+        "SEVERE_PCI_VIOLATION"
+      ]
+    },
+    {
+      "id": "BD-014",
+      "category": "financial_data",
+      "label": "Bank Account Number + Routing Number",
+      "description": "Direct bank account credentials for ACH transactions",
+      "applicable_apps": [
+        "financial_system",
+        "database_system",
+        "web_application"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 97,
+      "regex_patterns": [
+        "routing.?number.{0,20}\\d{9}",
+        "account.?number.{0,20}\\d{8,17}"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".pdf",
+        ".txt",
+        ".json",
+        ".xml"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.98,
+      "example_breach_vector": "Payroll export, direct deposit setup files, wire transfer logs",
+      "indicators": [
+        "CRITICAL_FINANCIAL",
+        "ACH_FRAUD_RISK",
+        "WIRE_FRAUD_RISK"
+      ]
+    },
+    {
+      "id": "BD-015",
+      "category": "financial_data",
+      "label": "Salary / Compensation Data",
+      "description": "Individual employee salary or bonus information",
+      "applicable_apps": [
+        "database_system",
+        "financial_system",
+        "desktop_application"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 70,
+      "regex_patterns": [
+        "salary\\s*:\\s*\\$?[\\d,]+",
+        "compensation\\s*=\\s*\\d+",
+        "annual.?pay.{0,20}\\d+"
+      ],
+      "file_types_at_risk": [
+        ".csv",
+        ".xlsx",
+        ".pdf",
+        ".docx"
+      ],
+      "sanitize_action": "redact",
+      "learning_weight": 0.74,
+      "example_breach_vector": "HR system export, payroll spreadsheet leak, performance review docs",
+      "indicators": [
+        "FINANCIAL_PII",
+        "GDPR_VIOLATION",
+        "HR_SENSITIVE"
+      ]
+    },
+    {
+      "id": "BD-016",
+      "category": "medical_health_data",
+      "label": "Medical Record Number (MRN)",
+      "description": "Unique patient identifier within a healthcare system",
+      "applicable_apps": [
+        "medical_system",
+        "database_system",
+        "government_classified"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 92,
+      "regex_patterns": [
+        "MRN\\s*:\\s*\\d+",
+        "medical.?record.{0,10}\\d{6,}",
+        "patient.?id.{0,10}\\d+"
+      ],
+      "file_types_at_risk": [
+        ".hl7",
+        ".xml",
+        ".csv",
+        ".pdf",
+        ".json"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.95,
+      "example_breach_vector": "EHR export, hospital billing files, insurance claims",
+      "indicators": [
+        "CRITICAL_PHI",
+        "HIPAA_VIOLATION",
+        "PATIENT_HARM_RISK"
+      ]
+    },
+    {
+      "id": "BD-017",
+      "category": "medical_health_data",
+      "label": "Diagnosis / ICD Code with Patient ID",
+      "description": "Medical diagnosis linked to an identifiable patient",
+      "applicable_apps": [
+        "medical_system",
+        "database_system"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 94,
+      "regex_patterns": [
+        "ICD-?10\\s*:\\s*[A-Z]\\d+",
+        "diagnosis.{0,20}(cancer|HIV|diabetes|mental|psychiatric)"
+      ],
+      "file_types_at_risk": [
+        ".hl7",
+        ".xml",
+        ".csv",
+        ".pdf",
+        ".json"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.96,
+      "example_breach_vector": "Clinical notes export, insurance pre-authorization files",
+      "indicators": [
+        "CRITICAL_PHI",
+        "HIPAA_VIOLATION",
+        "STIGMA_DISCLOSURE_RISK"
+      ]
+    },
+    {
+      "id": "BD-018",
+      "category": "medical_health_data",
+      "label": "Prescription / Medication Record",
+      "description": "Drug prescriptions tied to patient identity",
+      "applicable_apps": [
+        "medical_system",
+        "database_system",
+        "government_classified"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 91,
+      "regex_patterns": [
+        "Rx#\\s*\\d+",
+        "prescription.{0,10}(mg|mcg|ml)",
+        "medication.{0,15}(daily|twice|once)"
+      ],
+      "file_types_at_risk": [
+        ".pdf",
+        ".hl7",
+        ".csv",
+        ".txt"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.93,
+      "example_breach_vector": "Pharmacy system export, controlled substance tracking files",
+      "indicators": [
+        "CRITICAL_PHI",
+        "HIPAA_VIOLATION",
+        "DRUG_ABUSE_DISCLOSURE"
+      ]
+    },
+    {
+      "id": "BD-019",
+      "category": "medical_health_data",
+      "label": "Biometric Data (Fingerprint / Retina)",
+      "description": "Raw or template biometric sensor data",
+      "applicable_apps": [
+        "mobile_application",
+        "government_classified",
+        "iot_device",
+        "desktop_application"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 98,
+      "regex_patterns": [
+        "fingerprint_template",
+        "biometric_hash",
+        "iris_scan",
+        "faceprint"
+      ],
+      "file_types_at_risk": [
+        ".bin",
+        ".dat",
+        ".json",
+        ".xml",
+        ".iso"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.99,
+      "example_breach_vector": "Access control system export, border control database dump",
+      "indicators": [
+        "CRITICAL_BIOMETRIC",
+        "GDPR_VIOLATION",
+        "IRREVOCABLE_PII"
+      ]
+    },
+    {
+      "id": "BD-020",
+      "category": "network_infrastructure",
+      "label": "Internal IP Address Range",
+      "description": "Private network subnets and topology maps",
+      "applicable_apps": [
+        "web_application",
+        "api_service",
+        "cloud_infrastructure",
+        "industrial_scada",
+        "government_classified"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 78,
+      "regex_patterns": [
+        "10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+        "192\\.168\\.\\d{1,3}\\.\\d{1,3}",
+        "172\\.(1[6-9]|2[0-9]|3[01])\\.\\d{1,3}\\.\\d{1,3}"
+      ],
+      "file_types_at_risk": [
+        ".conf",
+        ".xml",
+        ".json",
+        ".csv",
+        ".txt",
+        ".log",
+        ".yaml"
+      ],
+      "sanitize_action": "redact",
+      "learning_weight": 0.85,
+      "example_breach_vector": "Network configuration export, Nmap scan results, device inventory",
+      "indicators": [
+        "NETWORK_TOPOLOGY",
+        "RECON_DATA",
+        "LATERAL_MOVEMENT_FACILITATOR"
+      ]
+    },
+    {
+      "id": "BD-021",
+      "category": "network_infrastructure",
+      "label": "VPN Credentials / Configuration",
+      "description": "VPN server addresses, usernames, passwords, PSKs",
+      "applicable_apps": [
+        "desktop_application",
+        "cloud_infrastructure",
+        "government_classified",
+        "air_gapped_network"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 96,
+      "regex_patterns": [
+        "remote\\s+vpn\\.",
+        "psk\\s*=\\s*\\S+",
+        "vpn.password.{0,10}\\S+",
+        "server\\s*=\\s*\\d+\\.\\d+\\.\\d+\\.\\d+"
+      ],
+      "file_types_at_risk": [
+        ".ovpn",
+        ".conf",
+        ".txt",
+        ".xml",
+        ".json"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.97,
+      "example_breach_vector": "Remote worker device export, IT helpdesk config export",
+      "indicators": [
+        "CRITICAL_CREDENTIAL",
+        "NETWORK_BYPASS",
+        "PERIMETER_BREACH"
+      ]
+    },
+    {
+      "id": "BD-022",
+      "category": "network_infrastructure",
+      "label": "Firewall Rules / ACL Configuration",
+      "description": "Inbound/outbound rules that define network boundaries",
+      "applicable_apps": [
+        "cloud_infrastructure",
+        "industrial_scada",
+        "government_classified",
+        "air_gapped_network"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 82,
+      "regex_patterns": [
+        "ACCEPT\\s+tcp",
+        "iptables\\s+-A",
+        "permit\\s+ip\\s+any",
+        "deny\\s+any\\s+any"
+      ],
+      "file_types_at_risk": [
+        ".conf",
+        ".txt",
+        ".sh",
+        ".xml",
+        ".json"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.88,
+      "example_breach_vector": "Backup config export, IT audit files, router/switch config backup",
+      "indicators": [
+        "NETWORK_ARCHITECTURE",
+        "ATTACK_SURFACE_MAP",
+        "BYPASS_PLANNING"
+      ]
+    },
+    {
+      "id": "BD-023",
+      "category": "source_code_intellectual_property",
+      "label": "Database Connection String",
+      "description": "Connection strings with credentials for databases",
+      "applicable_apps": [
+        "web_application",
+        "desktop_application",
+        "api_service",
+        "cloud_infrastructure"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 97,
+      "regex_patterns": [
+        "(mysql|postgres|mssql|mongodb|redis)://[^@]+@[^/]+",
+        "Server=.*;Database=.*;User Id=.*;Password=.*;",
+        "mongodb\\+srv://[^@]+@"
+      ],
+      "file_types_at_risk": [
+        ".env",
+        ".conf",
+        ".json",
+        ".xml",
+        ".py",
+        ".js",
+        ".php",
+        ".config"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.99,
+      "example_breach_vector": "Source code leak, .env file committed to git, config export",
+      "indicators": [
+        "CRITICAL_CREDENTIAL",
+        "DATABASE_TAKEOVER",
+        "DATA_EXFILTRATION_GATEWAY"
+      ]
+    },
+    {
+      "id": "BD-024",
+      "category": "source_code_intellectual_property",
+      "label": "Proprietary Algorithm / Trade Secret Code",
+      "description": "Core business logic, pricing models, trading algorithms",
+      "applicable_apps": [
+        "desktop_application",
+        "api_service",
+        "financial_system",
+        "industrial_scada"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 80,
+      "regex_patterns": [
+        "# PROPRIETARY",
+        "# DO NOT DISTRIBUTE",
+        "# CONFIDENTIAL",
+        "@trade_secret"
+      ],
+      "file_types_at_risk": [
+        ".py",
+        ".java",
+        ".cpp",
+        ".c",
+        ".go",
+        ".rs",
+        ".cs"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.84,
+      "example_breach_vector": "Code repository export, compiled binary with embedded logic, insider threat",
+      "indicators": [
+        "INTELLECTUAL_PROPERTY",
+        "COMPETITIVE_ESPIONAGE",
+        "NDA_VIOLATION"
+      ]
+    },
+    {
+      "id": "BD-025",
+      "category": "source_code_intellectual_property",
+      "label": "Cloud Provider Access Keys (AWS/Azure/GCP)",
+      "description": "IAM keys, service account credentials, subscription IDs",
+      "applicable_apps": [
+        "cloud_infrastructure",
+        "web_application",
+        "api_service",
+        "desktop_application"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 100,
+      "regex_patterns": [
+        "AKIA[0-9A-Z]{16}",
+        "aws_secret_access_key\\s*=\\s*[A-Za-z0-9/+]{40}",
+        "AIza[0-9A-Za-z_\\-]{35}"
+      ],
+      "file_types_at_risk": [
+        ".env",
+        ".json",
+        ".csv",
+        ".txt",
+        ".yml",
+        ".yaml"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "Committed .aws/credentials, terraform state file, CI/CD log",
+      "indicators": [
+        "CRITICAL_CLOUD_CREDENTIAL",
+        "CRYPTOMINING_RISK",
+        "DATA_EXFILTRATION_RISK",
+        "RANSOMWARE_DEPLOYMENT_RISK"
+      ]
+    },
+    {
+      "id": "BD-026",
+      "category": "government_classified",
+      "label": "Classified Document Markings",
+      "description": "SECRET, TOP SECRET, SCI, FOUO, NOFORN, CONFIDENTIAL markings",
+      "applicable_apps": [
+        "government_classified",
+        "air_gapped_network",
+        "desktop_application"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 100,
+      "regex_patterns": [
+        "TOP\\s+SECRET",
+        "(TS/SCI)",
+        "CLASSIFIED BY",
+        "NOFORN",
+        "FOR OFFICIAL USE ONLY",
+        "FOUO"
+      ],
+      "file_types_at_risk": [
+        ".pdf",
+        ".docx",
+        ".txt",
+        ".pptx",
+        ".xlsx",
+        ".html"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "Unauthorized air-gap transfer, USB exfiltration, insider leak",
+      "indicators": [
+        "CRITICAL_CLASSIFIED",
+        "ESPIONAGE_RISK",
+        "FEDERAL_CRIMINAL_VIOLATION",
+        "NATIONAL_SECURITY"
+      ]
+    },
+    {
+      "id": "BD-027",
+      "category": "government_classified",
+      "label": "Personnel Security Clearance Records",
+      "description": "Clearance levels, polygraph results, investigation files",
+      "applicable_apps": [
+        "government_classified",
+        "air_gapped_network",
+        "database_system"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 99,
+      "regex_patterns": [
+        "clearance.?level",
+        "polygraph.?result",
+        "SF-86",
+        "security.?investigation"
+      ],
+      "file_types_at_risk": [
+        ".pdf",
+        ".docx",
+        ".xml",
+        ".csv"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "HR system export from SCIF, unauthorized access to adjudication database",
+      "indicators": [
+        "CRITICAL_CLASSIFIED",
+        "PERSONNEL_SECURITY",
+        "BLACKMAIL_RISK"
+      ]
+    },
+    {
+      "id": "BD-028",
+      "category": "industrial_control_systems",
+      "label": "SCADA Network Topology / PLC Addresses",
+      "description": "Industrial control system network maps and device addresses",
+      "applicable_apps": [
+        "industrial_scada",
+        "air_gapped_network",
+        "iot_device"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 98,
+      "regex_patterns": [
+        "PLC\\s*\\d+",
+        "SCADA",
+        "Modbus\\s+TCP",
+        "DNP3",
+        "ladder.?diagram",
+        "HMI.?address"
+      ],
+      "file_types_at_risk": [
+        ".xml",
+        ".conf",
+        ".csv",
+        ".txt",
+        ".json",
+        ".bin"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "USB transfer from control room (Stuxnet-style), maintenance laptop export",
+      "indicators": [
+        "CRITICAL_ICS",
+        "SABOTAGE_RISK",
+        "INFRASTRUCTURE_ATTACK",
+        "STUXNET_CLASS"
+      ]
+    },
+    {
+      "id": "BD-029",
+      "category": "industrial_control_systems",
+      "label": "Firmware Update Package (Unsigned/Modified)",
+      "description": "Device firmware with altered or unsigned binary payloads",
+      "applicable_apps": [
+        "iot_device",
+        "industrial_scada",
+        "air_gapped_network"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 100,
+      "regex_patterns": [
+        "firmware",
+        "bootloader",
+        "flash.?write",
+        "\\x7fELF"
+      ],
+      "file_types_at_risk": [
+        ".bin",
+        ".img",
+        ".hex",
+        ".fw",
+        ".elf"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "Malicious firmware on USB (Fanny-style), compromised update server",
+      "indicators": [
+        "CRITICAL_FIRMWARE",
+        "PERSISTENT_IMPLANT",
+        "SUPPLY_CHAIN_ATTACK"
+      ]
+    },
+    {
+      "id": "BD-030",
+      "category": "malware_indicators",
+      "label": "Executable with High Entropy Payload",
+      "description": "Encrypted or compressed malicious code embedded in a file",
+      "applicable_apps": [
+        "web_application",
+        "desktop_application",
+        "air_gapped_network",
+        "industrial_scada"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 99,
+      "regex_patterns": [
+        "\\x4D\\x5A",
+        "MZ header",
+        "PE32\\+?",
+        "entropy > 7.5"
+      ],
+      "file_types_at_risk": [
+        ".exe",
+        ".dll",
+        ".bin",
+        ".pdf",
+        ".docx",
+        ".xls",
+        ".zip"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "Steganographic payload, macro-embedded document, hollowed PE",
+      "indicators": [
+        "CRITICAL_MALWARE",
+        "HIGH_ENTROPY_PAYLOAD",
+        "POTENTIAL_RANSOMWARE",
+        "STEGANOGRAPHY"
+      ]
+    },
+    {
+      "id": "BD-031",
+      "category": "malware_indicators",
+      "label": "Macro-Enabled Office Document",
+      "description": "VBA/XLM macros in Office files that can execute code",
+      "applicable_apps": [
+        "web_application",
+        "desktop_application",
+        "email_system"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 85,
+      "regex_patterns": [
+        "VBA",
+        "Sub Auto_Open",
+        "Document_Open",
+        "Shell\\(",
+        "CreateObject"
+      ],
+      "file_types_at_risk": [
+        ".docm",
+        ".xlsm",
+        ".pptm",
+        ".doc",
+        ".xls"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.91,
+      "example_breach_vector": "Phishing attachment, USB drop, legitimate file with injected macro",
+      "indicators": [
+        "MACRO_THREAT",
+        "CODE_EXECUTION_RISK",
+        "INITIAL_ACCESS_VECTOR"
+      ]
+    },
+    {
+      "id": "BD-032",
+      "category": "malware_indicators",
+      "label": "Shell / Reverse Shell Script",
+      "description": "Bash or PowerShell script establishing remote command execution",
+      "applicable_apps": [
+        "web_application",
+        "desktop_application",
+        "api_service",
+        "air_gapped_network"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 100,
+      "regex_patterns": [
+        "/dev/tcp/",
+        "nc\\s+-e",
+        "bash -i",
+        "powershell.*-enc",
+        "IEX.*DownloadString"
+      ],
+      "file_types_at_risk": [
+        ".sh",
+        ".ps1",
+        ".bat",
+        ".py",
+        ".txt",
+        ".php"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 1.0,
+      "example_breach_vector": "Webshell upload, supply chain code injection, insider threat",
+      "indicators": [
+        "CRITICAL_EXPLOIT",
+        "REVERSE_SHELL",
+        "COMMAND_CONTROL",
+        "C2_BEACON"
+      ]
+    },
+    {
+      "id": "BD-033",
+      "category": "location_tracking",
+      "label": "GPS Coordinates Linked to Person",
+      "description": "Precise lat/lon location data tied to identifiable individual",
+      "applicable_apps": [
+        "mobile_application",
+        "iot_device",
+        "web_application",
+        "government_classified"
+      ],
+      "threat_level": "HIGH",
+      "risk_score": 73,
+      "regex_patterns": [
+        "latitude\\s*:\\s*-?\\d+\\.\\d{4,}",
+        "longitude\\s*:\\s*-?\\d+\\.\\d{4,}",
+        "\\\"lat\\\"\\s*:\\s*-?\\d+\\.\\d+"
+      ],
+      "file_types_at_risk": [
+        ".json",
+        ".csv",
+        ".xml",
+        ".gpx",
+        ".kml"
+      ],
+      "sanitize_action": "redact",
+      "learning_weight": 0.79,
+      "example_breach_vector": "App telemetry dump, photo EXIF export, geofencing logs",
+      "indicators": [
+        "LOCATION_PII",
+        "SURVEILLANCE_RISK",
+        "STALKING_FACILITATION"
+      ]
+    },
+    {
+      "id": "BD-034",
+      "category": "location_tracking",
+      "label": "EXIF Metadata with GPS in Images",
+      "description": "Embedded camera metadata including GPS coordinates and device info",
+      "applicable_apps": [
+        "mobile_application",
+        "web_application",
+        "desktop_application"
+      ],
+      "threat_level": "MEDIUM",
+      "risk_score": 58,
+      "regex_patterns": [
+        "GPS.?Latitude",
+        "GPS.?Longitude",
+        "Make\\s*=",
+        "Model\\s*=",
+        "DateTimeOriginal"
+      ],
+      "file_types_at_risk": [
+        ".jpg",
+        ".jpeg",
+        ".tiff",
+        ".png",
+        ".heic"
+      ],
+      "sanitize_action": "strip_metadata",
+      "learning_weight": 0.66,
+      "example_breach_vector": "Unstripped photo upload, image sharing without EXIF scrubbing",
+      "indicators": [
+        "METADATA_LEAK",
+        "LOCATION_DISCLOSURE",
+        "DEVICE_FINGERPRINT"
+      ]
+    },
+    {
+      "id": "BD-035",
+      "category": "steganography",
+      "label": "Steganographic Payload in Image/Audio",
+      "description": "Hidden data encoded in LSBs of media files",
+      "applicable_apps": [
+        "web_application",
+        "desktop_application",
+        "air_gapped_network",
+        "government_classified"
+      ],
+      "threat_level": "CRITICAL",
+      "risk_score": 95,
+      "regex_patterns": [
+        "chi-square test fail",
+        "lsb_steg_detected",
+        "histogram_anomaly",
+        "entropy_spike_lsb"
+      ],
+      "file_types_at_risk": [
+        ".png",
+        ".bmp",
+        ".wav",
+        ".mp3",
+        ".gif",
+        ".tiff"
+      ],
+      "sanitize_action": "quarantine",
+      "learning_weight": 0.96,
+      "example_breach_vector": "Air-gap data exfiltration via image channel, covert C2",
+      "indicators": [
+        "CRITICAL_STEGANOGRAPHY",
+        "COVERT_CHANNEL",
+        "DATA_EXFILTRATION"
+      ]
+    }
+  ],
+  "training_records_breached": [
+    {
+      "record_id": "TRN-001",
+      "source": "historical_scan",
+      "filename": "employee_export_2024.csv",
+      "extension": ".csv",
+      "detected_type": "text/csv",
+      "entropy": 4.21,
+      "risk_score": 88,
+      "verdict": "FAIL",
+      "threats": [
+        "SSN_PATTERN",
+        "EMAIL_PATTERN",
+        "SALARY_DATA"
+      ],
+      "breach_ids": [
+        "BD-002",
+        "BD-005",
+        "BD-015"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    },
+    {
+      "record_id": "TRN-002",
+      "source": "historical_scan",
+      "filename": "app_config_prod.env",
+      "extension": ".env",
+      "detected_type": "text/plain",
+      "entropy": 5.82,
+      "risk_score": 100,
+      "verdict": "FAIL",
+      "threats": [
+        "DATABASE_CONNECTION_STRING",
+        "API_KEY",
+        "PLAINTEXT_PASSWORD"
+      ],
+      "breach_ids": [
+        "BD-007",
+        "BD-008",
+        "BD-023"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    },
+    {
+      "record_id": "TRN-004",
+      "source": "historical_scan",
+      "filename": "patient_records_hl7.xml",
+      "extension": ".xml",
+      "detected_type": "text/xml",
+      "entropy": 4.55,
+      "risk_score": 97,
+      "verdict": "FAIL",
+      "threats": [
+        "PHI_DETECTED",
+        "MRN_PATTERN",
+        "ICD_CODE",
+        "DOB_FOUND"
+      ],
+      "breach_ids": [
+        "BD-003",
+        "BD-016",
+        "BD-017"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    },
+    {
+      "record_id": "TRN-006",
+      "source": "historical_scan",
+      "filename": "malware_dropper.pdf",
+      "extension": ".pdf",
+      "detected_type": "application/pdf",
+      "entropy": 7.95,
+      "risk_score": 100,
+      "verdict": "FAIL",
+      "threats": [
+        "HIGH_ENTROPY_PAYLOAD",
+        "PE_HEADER_EMBEDDED",
+        "JAVASCRIPT_IN_PDF"
+      ],
+      "breach_ids": [
+        "BD-030"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    },
+    {
+      "record_id": "TRN-008",
+      "source": "historical_scan",
+      "filename": "network_config_backup.conf",
+      "extension": ".conf",
+      "detected_type": "text/plain",
+      "entropy": 4.88,
+      "risk_score": 82,
+      "verdict": "FAIL",
+      "threats": [
+        "INTERNAL_IP_RANGE",
+        "FIREWALL_RULES",
+        "VPN_PSK"
+      ],
+      "breach_ids": [
+        "BD-020",
+        "BD-021",
+        "BD-022"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    },
+    {
+      "record_id": "TRN-009",
+      "source": "historical_scan",
+      "filename": "firmware_update_v2.bin",
+      "extension": ".bin",
+      "detected_type": "application/octet-stream",
+      "entropy": 7.99,
+      "risk_score": 100,
+      "verdict": "FAIL",
+      "threats": [
+        "FIRMWARE_BINARY",
+        "UNSIGNED_PAYLOAD",
+        "BOOTLOADER_DETECTED"
+      ],
+      "breach_ids": [
+        "BD-029"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    },
+    {
+      "record_id": "TRN-010",
+      "source": "historical_scan",
+      "filename": "credit_card_orders_q3.csv",
+      "extension": ".csv",
+      "detected_type": "text/csv",
+      "entropy": 4.32,
+      "risk_score": 100,
+      "verdict": "FAIL",
+      "threats": [
+        "CREDIT_CARD_PAN",
+        "CVV_DETECTED",
+        "PCI_DSS_VIOLATION"
+      ],
+      "breach_ids": [
+        "BD-012",
+        "BD-013"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    },
+    {
+      "record_id": "TRN-011",
+      "source": "historical_scan",
+      "filename": "classified_brief_TS_SCI.pdf",
+      "extension": ".pdf",
+      "detected_type": "application/pdf",
+      "entropy": 5.11,
+      "risk_score": 100,
+      "verdict": "FAIL",
+      "threats": [
+        "CLASSIFIED_MARKING",
+        "TOP_SECRET_SCI",
+        "NOFORN"
+      ],
+      "breach_ids": [
+        "BD-026",
+        "BD-027"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    },
+    {
+      "record_id": "TRN-013",
+      "source": "historical_scan",
+      "filename": "macro_invoice_malicious.xlsm",
+      "extension": ".xlsm",
+      "detected_type": "application/vnd.ms-excel.sheet.macroEnabled.12",
+      "entropy": 6.55,
+      "risk_score": 85,
+      "verdict": "FAIL",
+      "threats": [
+        "MACRO_VBA_DETECTED",
+        "AUTO_OPEN_MACRO",
+        "SHELL_CALL_IN_MACRO"
+      ],
+      "breach_ids": [
+        "BD-031"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 0.92
+    },
+    {
+      "record_id": "TRN-014",
+      "source": "historical_scan",
+      "filename": "scada_topology_export.xml",
+      "extension": ".xml",
+      "detected_type": "text/xml",
+      "entropy": 3.88,
+      "risk_score": 98,
+      "verdict": "FAIL",
+      "threats": [
+        "SCADA_TOPOLOGY",
+        "PLC_ADDRESSES",
+        "MODBUS_CONFIG",
+        "ICS_IDENTIFIERS"
+      ],
+      "breach_ids": [
+        "BD-028"
+      ],
+      "sanitize_actions_taken": [
+        "quarantine"
+      ],
+      "outcome": "QUARANTINED",
+      "learning_signal": 1.0
+    }
+  ]
+}

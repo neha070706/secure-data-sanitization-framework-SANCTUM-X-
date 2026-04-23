@@ -1,0 +1,9 @@
+{
+  "transfer_timestamp": "20260419T011913Z",
+  "bundle_file": "bundle_20260419T011913Z.zip",
+  "bundle_sha256": "6ab4759c0987ec48cb7b0f2ab7ba049bb4ac56dbcbc9632025f671d717979f72",
+  "key_file": "N/A",
+  "key_delivery": "NO KEY FILE PRESENT",
+  "sanctum_version": "2.1",
+  "warning": "BUNDLE WAS GENERATED WITHOUT ENCRYPTION SUPPORT"
+}

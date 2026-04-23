@@ -1,0 +1,53 @@
+{
+  "brief_id": "BRF-36983840",
+  "classification": "CONFIDENTIAL",
+  "prepared_utc": "2026-04-21T12:49:44.412380+00:00",
+  "sector": "Mosul",
+  "grid_ref": "GRID 3634-4313",
+  "mission_type": "perimeter hardening",
+  "reporting_unit": "Delta Force",
+  "lead_analyst": "Priya Fischer",
+  "watch_items": [
+    {
+      "incident_id": "INC-37571565",
+      "summary": "intermittent SATCOM degradation",
+      "priority": "ROUTINE",
+      "assigned_team": "NOMAD-76"
+    },
+    {
+      "incident_id": "INC-54352936",
+      "summary": "sensor jitter spike",
+      "priority": "ROUTINE",
+      "assigned_team": "SENTRY-67"
+    },
+    {
+      "incident_id": "INC-96331731",
+      "summary": "unauthorized access attempt",
+      "priority": "ELEVATED",
+      "assigned_team": "NOMAD-83"
+    },
+    {
+      "incident_id": "INC-86259953",
+      "summary": "intermittent SATCOM degradation",
+      "priority": "IMMEDIATE",
+      "assigned_team": "SENTRY-76"
+    },
+    {
+      "incident_id": "INC-77428813",
+      "summary": "power fluctuation at relay mast",
+      "priority": "ELEVATED",
+      "assigned_team": "ORBIT-53"
+    },
+    {
+      "incident_id": "INC-35117708",
+      "summary": "sensor jitter spike",
+      "priority": "IMMEDIATE",
+      "assigned_team": "VIPER-45"
+    }
+  ],
+  "recommended_actions": [
+    "validate route timing against latest patrol handoff",
+    "cross-check badge access with local operator roster",
+    "reinspect portable media submitted during current shift"
+  ]
+}

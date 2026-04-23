@@ -1,0 +1,38 @@
+CLASSIFICATION: CONFIDENTIAL
+REPORT ID   : RPT-41885775
+DATE        : 2026-04-07 0609Z
+ANALYST     : James Fischer
+UNIT        : Delta Force
+CALLSIGN    : SENTRY-30
+SUBJECT     : Arjun Petrov
+LOCATION    : Fallujah (33.3506N, 43.7742E)
+GRID REF    : GRID 3335-4377
+THREAT LEVEL: LOW
+MISSION     : signals capture
+
+EXECUTIVE SUMMARY
+=================
+Intelligence gathered from signals intercept at Fallujah on 2026-04-07.
+Subject (Arjun Petrov) was observed at grid reference 33.3506N 43.7742E
+operating in the vicinity of 7th Brigade assets.
+
+SIGINT ASSESSMENT
+=================
+Three intercepts collected between 1147Z and 0417Z.
+Communication pattern consistent with low threat activity.
+No encryption detected on primary channel. Secondary channel encrypted —
+further analysis pending.
+
+RECOMMENDED ACTION
+==================
+Continue monitoring. No immediate action required.
+
+ANALYST NOTES
+=============
+Report compiled by James Fischer, Forward Recon Group.
+Cross-reference with report RPT-13284123 and RPT-77318466.
+Equipment referenced: rugged tablet.
+Field note: asset moved without prior route confirmation.
+Next review: 2026-04-14.
+
+END OF REPORT — CONFIDENTIAL

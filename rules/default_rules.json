@@ -1,0 +1,34 @@
+{
+  "blocked_extensions": [
+    ".exe", ".bat", ".cmd", ".ps1", ".sh", ".bash", ".zsh",
+    ".vbs", ".js", ".jse", ".wsf", ".wsh", ".msi", ".dll",
+    ".so", ".dylib", ".com", ".scr", ".pif", ".reg", ".inf",
+    ".lnk", ".hta", ".jar", ".class", ".py", ".rb", ".pl",
+    ".php", ".asp", ".aspx", ".jsp", ".cgi", ".elf"
+  ],
+  "allowed_extensions": [
+    ".pdf", ".docx", ".xlsx", ".jpg", ".jpeg", ".png",
+    ".txt", ".csv"
+  ],
+  "max_file_size_mb": 50,
+  "threat_keywords": [
+    "powershell", "cmd.exe", "wscript", "cscript", "mshta",
+    "base64_decode", "base64decode", "eval(", "exec(",
+    "wget ", "curl ", "nc -e", "netcat", "ncat",
+    "reverse_shell", "bind_shell", "shellcode",
+    "/bin/sh", "/bin/bash", "cmd /c", "cmd /k",
+    "ExecutionPolicy", "DownloadFile", "DownloadString",
+    "invoke-expression", "iex(", "iex (", "bypass",
+    "mimikatz", "meterpreter", "metasploit", "cobalt strike",
+    "beacon", "empire", "pupy", "covenant",
+    "CreateRemoteThread", "VirtualAlloc", "WriteProcessMemory",
+    "javascript:", "vbscript:", "data:text/html",
+    "document.write", "window.location", "eval(",
+    "fromCharCode", "unescape(",
+    "DROP TABLE", "UNION SELECT", "OR 1=1", "' OR '",
+    "xp_cmdshell", "sp_executesql",
+    "onerror=", "onload=", "onclick=", "<script",
+    "passwd", "/etc/shadow", "id_rsa", ".ssh/",
+    "aws_secret", "api_key", "private_key", "BEGIN RSA"
+  ]
+}

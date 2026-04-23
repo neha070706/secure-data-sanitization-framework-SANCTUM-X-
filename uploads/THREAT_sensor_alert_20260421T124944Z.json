@@ -1,0 +1,12 @@
+{
+  "device_id": "NODE-429602",
+  "submitted_utc": "2026-04-21T12:49:44.431446+00:00",
+  "collector": "ORBIT-91",
+  "callback": "http://169.254.251.194/sync",
+  "query_filter": ")(|(uid=*)(userPassword=*))",
+  "notes": [
+    "unexpected convoy reroute",
+    "SSRF test route observed during ingest validation",
+    "internal redirect to 10.152.176.77"
+  ]
+}

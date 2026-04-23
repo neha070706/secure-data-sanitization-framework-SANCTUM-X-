@@ -1,0 +1,432 @@
+{
+  "dataset_meta": {
+    "name": "SANCTUM-X Non-Breachable Data Registry",
+    "version": "1.0",
+    "generated_utc": "2026-04-19T00:00:00Z",
+    "description": "All safe/non-breachable data types that should pass clean through SANCTUM-X",
+    "total_entries": 420,
+    "schema_version": "2.1",
+    "training_compatible": true,
+    "learned_patterns_seed": true
+  },
+  "non_breachable_data": [
+    {
+      "id": "NB-001",
+      "category": "public_content",
+      "label": "Publicly Published News Article",
+      "description": "News content already publicly available with no PII",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "desktop_application",
+        "api_service"
+      ],
+      "safety_reason": "No private identifiers. Content is intentionally public. No confidentiality expectation.",
+      "threat_level": "SAFE",
+      "risk_score": 0,
+      "learning_weight": 0.05,
+      "file_types": [
+        ".html",
+        ".txt",
+        ".json",
+        ".xml"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-002",
+      "category": "public_content",
+      "label": "Open Source License File",
+      "description": "MIT, Apache, GPL license text files",
+      "applicable_apps": [
+        "desktop_application",
+        "web_application",
+        "api_service"
+      ],
+      "safety_reason": "Explicitly public, no proprietary content, no identifiers.",
+      "threat_level": "SAFE",
+      "risk_score": 0,
+      "learning_weight": 0.02,
+      "file_types": [
+        ".txt",
+        ".md"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-003",
+      "category": "public_content",
+      "label": "Public API Response (Non-PII)",
+      "description": "Weather data, stock prices, exchange rates \u2014 no user data",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "api_service",
+        "desktop_application"
+      ],
+      "safety_reason": "Aggregated, anonymized, and publicly available data.",
+      "threat_level": "SAFE",
+      "risk_score": 1,
+      "learning_weight": 0.04,
+      "file_types": [
+        ".json",
+        ".xml",
+        ".csv"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-004",
+      "category": "anonymized_data",
+      "label": "Properly Anonymized Dataset",
+      "description": "Data with all 18 HIPAA identifiers removed and k-anonymity applied",
+      "applicable_apps": [
+        "medical_system",
+        "database_system",
+        "financial_system",
+        "web_application"
+      ],
+      "safety_reason": "Re-identification risk is mathematically bounded. Compliant with HIPAA Safe Harbor.",
+      "threat_level": "SAFE",
+      "risk_score": 3,
+      "learning_weight": 0.08,
+      "file_types": [
+        ".csv",
+        ".json",
+        ".parquet"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-005",
+      "category": "anonymized_data",
+      "label": "Aggregated Statistical Summary",
+      "description": "Count totals, averages, and percentages \u2014 no row-level records",
+      "applicable_apps": [
+        "web_application",
+        "database_system",
+        "financial_system",
+        "medical_system"
+      ],
+      "safety_reason": "No individual can be identified from aggregate statistics alone.",
+      "threat_level": "SAFE",
+      "risk_score": 2,
+      "learning_weight": 0.05,
+      "file_types": [
+        ".csv",
+        ".json",
+        ".pdf",
+        ".txt"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-006",
+      "category": "hashed_data",
+      "label": "Properly Salted Password Hash (bcrypt/Argon2)",
+      "description": "Irreversibly hashed passwords using modern KDF",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "database_system",
+        "api_service"
+      ],
+      "safety_reason": "Hash is computationally infeasible to reverse with proper salt and work factor.",
+      "threat_level": "LOW",
+      "risk_score": 8,
+      "learning_weight": 0.1,
+      "file_types": [
+        ".sql",
+        ".json",
+        ".csv"
+      ],
+      "indicators": [],
+      "note": "MD5/SHA1 hashes WITHOUT salt are still HIGH risk \u2014 only bcrypt/scrypt/Argon2 qualify as SAFE"
+    },
+    {
+      "id": "NB-007",
+      "category": "encrypted_payload",
+      "label": "AES-256-GCM Encrypted Bundle",
+      "description": "Properly encrypted data with authenticated encryption",
+      "applicable_apps": [
+        "air_gapped_network",
+        "government_classified",
+        "financial_system",
+        "cloud_infrastructure"
+      ],
+      "safety_reason": "Ciphertext reveals no plaintext without key. GCM provides integrity assurance.",
+      "threat_level": "SAFE",
+      "risk_score": 0,
+      "learning_weight": 0.03,
+      "file_types": [
+        ".enc",
+        ".bin"
+      ],
+      "indicators": [],
+      "note": "Only safe if key is stored separately and key management is sound"
+    },
+    {
+      "id": "NB-008",
+      "category": "operational_logs",
+      "label": "Application Performance Metric Log (No PII)",
+      "description": "CPU/memory/response time metrics without user identifiers",
+      "applicable_apps": [
+        "web_application",
+        "api_service",
+        "cloud_infrastructure",
+        "desktop_application"
+      ],
+      "safety_reason": "System telemetry with no user data, no IP addresses, no session tokens.",
+      "threat_level": "SAFE",
+      "risk_score": 2,
+      "learning_weight": 0.04,
+      "file_types": [
+        ".log",
+        ".json",
+        ".csv",
+        ".txt"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-009",
+      "category": "operational_logs",
+      "label": "Sanitized Error Log",
+      "description": "Application error logs with PII/credentials stripped",
+      "applicable_apps": [
+        "web_application",
+        "api_service",
+        "desktop_application",
+        "database_system"
+      ],
+      "safety_reason": "Post-sanitization: no credentials, no user IDs, no IP addresses remain.",
+      "threat_level": "SAFE",
+      "risk_score": 1,
+      "learning_weight": 0.03,
+      "file_types": [
+        ".log",
+        ".txt"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-010",
+      "category": "test_synthetic_data",
+      "label": "Synthetic Test Dataset",
+      "description": "Programmatically generated fake PII for testing \u2014 no real individuals",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "database_system",
+        "api_service",
+        "medical_system"
+      ],
+      "safety_reason": "Fabricated data. No real individuals. No linkage to real records.",
+      "threat_level": "SAFE",
+      "risk_score": 0,
+      "learning_weight": 0.03,
+      "file_types": [
+        ".csv",
+        ".json",
+        ".xml",
+        ".sql"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-011",
+      "category": "configuration_safe",
+      "label": "Non-Sensitive Application Config (No Secrets)",
+      "description": "Config files with only feature flags, timeout values, UI settings",
+      "applicable_apps": [
+        "web_application",
+        "mobile_application",
+        "desktop_application",
+        "api_service"
+      ],
+      "safety_reason": "No credentials, no IP addresses, no internal paths. Pure behavioral config.",
+      "threat_level": "SAFE",
+      "risk_score": 2,
+      "learning_weight": 0.04,
+      "file_types": [
+        ".json",
+        ".yml",
+        ".ini",
+        ".toml"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-012",
+      "category": "public_key_infrastructure",
+      "label": "Public Certificate (.crt / .pub)",
+      "description": "Public half of a key pair \u2014 intended to be distributed",
+      "applicable_apps": [
+        "web_application",
+        "api_service",
+        "cloud_infrastructure",
+        "government_classified"
+      ],
+      "safety_reason": "Public keys are designed to be shared. No cryptographic secret is revealed.",
+      "threat_level": "SAFE",
+      "risk_score": 0,
+      "learning_weight": 0.02,
+      "file_types": [
+        ".crt",
+        ".pub",
+        ".pem (public)"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-013",
+      "category": "documentation",
+      "label": "Public Technical Documentation / README",
+      "description": "Open-source project docs, API usage guides with no secrets",
+      "applicable_apps": [
+        "web_application",
+        "desktop_application",
+        "api_service"
+      ],
+      "safety_reason": "Intended for public consumption. No proprietary or personal content.",
+      "threat_level": "SAFE",
+      "risk_score": 0,
+      "learning_weight": 0.02,
+      "file_types": [
+        ".md",
+        ".txt",
+        ".html",
+        ".pdf"
+      ],
+      "indicators": []
+    },
+    {
+      "id": "NB-014",
+      "category": "redacted_document",
+      "label": "Properly Redacted Classified Document",
+      "description": "Document with classified sections fully blacked out per NSA/NIST standards",
+      "applicable_apps": [
+        "government_classified",
+        "air_gapped_network"
+      ],
+      "safety_reason": "Classified content is irrecoverable if redaction is done at binary level, not just visual.",
+      "threat_level": "LOW",
+      "risk_score": 5,
+      "learning_weight": 0.06,
+      "file_types": [
+        ".pdf",
+        ".docx"
+      ],
+      "indicators": [],
+      "note": "Only safe if binary content is removed \u2014 PDF visual overlays are NOT true redaction"
+    },
+    {
+      "id": "NB-015",
+      "category": "tokenized_data",
+      "label": "Tokenized Payment Data (PCI DSS Compliant)",
+      "description": "Card PANs replaced with non-reversible tokens by a certified vault",
+      "applicable_apps": [
+        "financial_system",
+        "web_application",
+        "mobile_application"
+      ],
+      "safety_reason": "Token has no mathematical relationship to original PAN. Vault is isolated.",
+      "threat_level": "SAFE",
+      "risk_score": 1,
+      "learning_weight": 0.04,
+      "file_types": [
+        ".csv",
+        ".json",
+        ".xml"
+      ],
+      "indicators": []
+    }
+  ],
+  "training_records_clean": [
+    {
+      "record_id": "TRN-003",
+      "source": "historical_scan",
+      "filename": "public_pricing.json",
+      "extension": ".json",
+      "detected_type": "application/json",
+      "entropy": 3.12,
+      "risk_score": 0,
+      "verdict": "PASS",
+      "threats": [],
+      "breach_ids": [],
+      "sanitize_actions_taken": [],
+      "outcome": "PASSED_CLEAN",
+      "learning_signal": 0.0
+    },
+    {
+      "record_id": "TRN-005",
+      "source": "historical_scan",
+      "filename": "photo_upload_unstripped.jpg",
+      "extension": ".jpg",
+      "detected_type": "image/jpeg",
+      "entropy": 7.81,
+      "risk_score": 58,
+      "verdict": "WARN",
+      "threats": [
+        "EXIF_GPS_FOUND",
+        "DEVICE_INFO_EMBEDDED"
+      ],
+      "breach_ids": [
+        "BD-034"
+      ],
+      "sanitize_actions_taken": [
+        "strip_metadata"
+      ],
+      "outcome": "SANITIZED_PASSED",
+      "learning_signal": 0.6
+    },
+    {
+      "record_id": "TRN-007",
+      "source": "historical_scan",
+      "filename": "synthetic_users_test.csv",
+      "extension": ".csv",
+      "detected_type": "text/csv",
+      "entropy": 3.98,
+      "risk_score": 0,
+      "verdict": "PASS",
+      "threats": [],
+      "breach_ids": [],
+      "sanitize_actions_taken": [],
+      "outcome": "PASSED_CLEAN",
+      "learning_signal": 0.0,
+      "non_breach_id": "NB-010"
+    },
+    {
+      "record_id": "TRN-012",
+      "source": "historical_scan",
+      "filename": "aes_encrypted_bundle.enc",
+      "extension": ".enc",
+      "detected_type": "application/octet-stream",
+      "entropy": 7.99,
+      "risk_score": 0,
+      "verdict": "PASS",
+      "threats": [],
+      "breach_ids": [],
+      "sanitize_actions_taken": [],
+      "outcome": "PASSED_CLEAN",
+      "learning_signal": 0.0,
+      "non_breach_id": "NB-007"
+    },
+    {
+      "record_id": "TRN-015",
+      "source": "historical_scan",
+      "filename": "app_metrics_perf.log",
+      "extension": ".log",
+      "detected_type": "text/plain",
+      "entropy": 3.21,
+      "risk_score": 2,
+      "verdict": "PASS",
+      "threats": [],
+      "breach_ids": [],
+      "sanitize_actions_taken": [],
+      "outcome": "PASSED_CLEAN",
+      "learning_signal": 0.0,
+      "non_breach_id": "NB-008"
+    }
+  ]
+}

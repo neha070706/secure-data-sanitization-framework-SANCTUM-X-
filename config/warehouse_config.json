@@ -1,0 +1,23 @@
+{
+  "mode": "sneakernet",
+  "lan": {
+    "endpoint_url": "https://192.168.1.100:8443/api/v1/ingest",
+    "client_cert": "certs/client.crt",
+    "client_key": "certs/client.key",
+    "ca_bundle": "certs/army_ca.crt",
+    "timeout_sec": 30,
+    "collection": "SANCTUM_INGEST"
+  },
+  "vpn": {
+    "endpoint_url": "https://10.0.0.50:8443/api/v1/ingest",
+    "client_cert": "certs/client.crt",
+    "client_key": "certs/client.key",
+    "ca_bundle": "certs/army_ca.crt",
+    "timeout_sec": 60,
+    "collection": "SANCTUM_INGEST"
+  },
+  "sneakernet": {
+    "output_path": "C:\\Users\\Neha\\OneDrive\\Desktop\\DSS_PROJECT\\secure-sanitization-framework\\secure-sanitization-framework\\sneakernet_out",
+    "subdir": "SANCTUM_TRANSFERS"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "threat_signatures": {
+    "binary_pattern::HIGH": {
+      "count": 8,
+      "descriptions": [
+        "Base64 payload execution",
+        "Encoded PowerShell command",
+        "Path traversal sequence (zip-slip)",
+        "VBA auto-execution macro",
+        "C2 callback reference",
+        "Hex-encoded shellcode sequence",
+        "LDAP injection pattern",
+        "Internal IP reference (SSRF risk)"
+      ]
+    },
+    "keyword::HIGH": {
+      "count": 12,
+      "descriptions": [
+        "Threat keyword: 'cmd.exe'",
+        "Threat keyword: 'base64_decode'",
+        "Threat keyword: 'eval('",
+        "Threat keyword: 'exec('",
+        "Threat keyword: 'shellcode'",
+        "Threat keyword: '/bin/sh'",
+        "Threat keyword: 'DownloadString'",
+        "Threat keyword: 'iex('",
+        "Threat keyword: 'beacon'",
+        "Threat keyword: 'passwd'"
+      ]
+    }
+  },
+  "file_type_baselines": {
+    ".pdf": {
+      "count": 10,
+      "avg_entropy": 6.3335,
+      "threat_rate": 0.0,
+      "threat_count": 0
+    },
+    ".txt": {
+      "count": 1,
+      "avg_entropy": 5.7578,
+      "threat_rate": 1.0,
+      "threat_count": 1
+    }
+  },
+  "scan_count": 11
+}

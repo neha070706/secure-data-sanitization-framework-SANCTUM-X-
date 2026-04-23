@@ -1,0 +1,514 @@
+{
+  "schema_version": "1.2",
+  "export_time": "2026-04-21T12:49:44.408636+00:00",
+  "unit": "Forward Recon Group",
+  "record_count": 28,
+  "mission": "perimeter hardening",
+  "site_callsign": "ORBIT-57",
+  "records": [
+    {
+      "sensor_id": "SEN-958772",
+      "timestamp": "2026-04-21T12:49:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.50461889207543,
+        "lon": 47.781081222135526
+      },
+      "readings": {
+        "temperature_c": 44.52,
+        "humidity_pct": 92.98,
+        "pressure_hpa": 993.96,
+        "vibration_g": 1.9251,
+        "radiation_usv": 0.1574
+      },
+      "alert": "THRESHOLD_EXCEEDED",
+      "operator_note": "requires manual verification at next patrol window"
+    },
+    {
+      "sensor_id": "SEN-671319",
+      "timestamp": "2026-04-21T12:43:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.50319812512835,
+        "lon": 47.788237982285075
+      },
+      "readings": {
+        "temperature_c": 46.81,
+        "humidity_pct": 58.44,
+        "pressure_hpa": 1005.38,
+        "vibration_g": 0.6139,
+        "radiation_usv": 0.3015
+      },
+      "alert": "THRESHOLD_EXCEEDED",
+      "operator_note": "battery swap completed"
+    },
+    {
+      "sensor_id": "SEN-684540",
+      "timestamp": "2026-04-21T12:37:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.511535176058715,
+        "lon": 47.78192720233786
+      },
+      "readings": {
+        "temperature_c": 19.45,
+        "humidity_pct": 55.5,
+        "pressure_hpa": 983.6,
+        "vibration_g": 0.1725,
+        "radiation_usv": 0.141
+      },
+      "alert": null,
+      "operator_note": "battery swap completed"
+    },
+    {
+      "sensor_id": "SEN-333782",
+      "timestamp": "2026-04-21T12:22:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.517193817334547,
+        "lon": 47.78177496509694
+      },
+      "readings": {
+        "temperature_c": 42.84,
+        "humidity_pct": 80.88,
+        "pressure_hpa": 1000.21,
+        "vibration_g": 1.1401,
+        "radiation_usv": 0.2009
+      },
+      "alert": null,
+      "operator_note": "requires manual verification at next patrol window"
+    },
+    {
+      "sensor_id": "SEN-578412",
+      "timestamp": "2026-04-21T12:09:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.512657661415794,
+        "lon": 47.78446371685364
+      },
+      "readings": {
+        "temperature_c": 33.34,
+        "humidity_pct": 87.61,
+        "pressure_hpa": 997.18,
+        "vibration_g": 1.3123,
+        "radiation_usv": 0.1284
+      },
+      "alert": null,
+      "operator_note": "requires manual verification at next patrol window"
+    },
+    {
+      "sensor_id": "SEN-556145",
+      "timestamp": "2026-04-21T11:34:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.509077931204676,
+        "lon": 47.781662795220896
+      },
+      "readings": {
+        "temperature_c": 26.1,
+        "humidity_pct": 15.17,
+        "pressure_hpa": 1013.55,
+        "vibration_g": 1.9505,
+        "radiation_usv": 0.0768
+      },
+      "alert": null,
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-532165",
+      "timestamp": "2026-04-21T11:25:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.512716273101468,
+        "lon": 47.78462247064145
+      },
+      "readings": {
+        "temperature_c": 33.09,
+        "humidity_pct": 81.85,
+        "pressure_hpa": 1016.37,
+        "vibration_g": 0.1347,
+        "radiation_usv": 0.2632
+      },
+      "alert": null,
+      "operator_note": "battery swap completed"
+    },
+    {
+      "sensor_id": "SEN-788726",
+      "timestamp": "2026-04-21T11:25:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.502649371731017,
+        "lon": 47.78553904650817
+      },
+      "readings": {
+        "temperature_c": 19.01,
+        "humidity_pct": 68.66,
+        "pressure_hpa": 1014.06,
+        "vibration_g": 0.7191,
+        "radiation_usv": 0.3176
+      },
+      "alert": null,
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-800933",
+      "timestamp": "2026-04-21T11:05:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.505771006406604,
+        "lon": 47.78862943559941
+      },
+      "readings": {
+        "temperature_c": 23.29,
+        "humidity_pct": 61.41,
+        "pressure_hpa": 990.85,
+        "vibration_g": 0.8028,
+        "radiation_usv": 0.1098
+      },
+      "alert": null,
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-174092",
+      "timestamp": "2026-04-21T11:28:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.502441140877703,
+        "lon": 47.78095038982389
+      },
+      "readings": {
+        "temperature_c": 39.7,
+        "humidity_pct": 67.38,
+        "pressure_hpa": 1021.93,
+        "vibration_g": 0.4043,
+        "radiation_usv": 0.3281
+      },
+      "alert": null,
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-760702",
+      "timestamp": "2026-04-21T11:39:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.506880852040958,
+        "lon": 47.774128709804714
+      },
+      "readings": {
+        "temperature_c": 36.58,
+        "humidity_pct": 25.84,
+        "pressure_hpa": 1014.2,
+        "vibration_g": 2.4749,
+        "radiation_usv": 0.373
+      },
+      "alert": null,
+      "operator_note": "relay mast inspected by field tech"
+    },
+    {
+      "sensor_id": "SEN-101476",
+      "timestamp": "2026-04-21T10:48:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.51120948093471,
+        "lon": 47.78059216641607
+      },
+      "readings": {
+        "temperature_c": 33.64,
+        "humidity_pct": 42.5,
+        "pressure_hpa": 1011.07,
+        "vibration_g": 2.0818,
+        "radiation_usv": 0.395
+      },
+      "alert": null,
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-346631",
+      "timestamp": "2026-04-21T11:49:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.51651256728868,
+        "lon": 47.77991067458871
+      },
+      "readings": {
+        "temperature_c": 19.25,
+        "humidity_pct": 44.18,
+        "pressure_hpa": 1016.43,
+        "vibration_g": 1.0651,
+        "radiation_usv": 0.2199
+      },
+      "alert": null,
+      "operator_note": "battery swap completed"
+    },
+    {
+      "sensor_id": "SEN-277030",
+      "timestamp": "2026-04-21T09:34:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.5084322895006,
+        "lon": 47.77769865477372
+      },
+      "readings": {
+        "temperature_c": 47.69,
+        "humidity_pct": 55.37,
+        "pressure_hpa": 987.14,
+        "vibration_g": 1.237,
+        "radiation_usv": 0.2507
+      },
+      "alert": null,
+      "operator_note": "relay mast inspected by field tech"
+    },
+    {
+      "sensor_id": "SEN-846280",
+      "timestamp": "2026-04-21T10:15:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.507440818986257,
+        "lon": 47.77051198921803
+      },
+      "readings": {
+        "temperature_c": 44.47,
+        "humidity_pct": 90.67,
+        "pressure_hpa": 991.04,
+        "vibration_g": 1.2349,
+        "radiation_usv": 0.3661
+      },
+      "alert": "THRESHOLD_EXCEEDED",
+      "operator_note": "relay mast inspected by field tech"
+    },
+    {
+      "sensor_id": "SEN-754677",
+      "timestamp": "2026-04-21T09:34:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.510163235359585,
+        "lon": 47.780289452951564
+      },
+      "readings": {
+        "temperature_c": 21.85,
+        "humidity_pct": 34.19,
+        "pressure_hpa": 985.94,
+        "vibration_g": 1.1895,
+        "radiation_usv": 0.2574
+      },
+      "alert": null,
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-593399",
+      "timestamp": "2026-04-21T10:57:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.50742876882824,
+        "lon": 47.78523958514637
+      },
+      "readings": {
+        "temperature_c": 22.83,
+        "humidity_pct": 42.04,
+        "pressure_hpa": 1014.46,
+        "vibration_g": 1.0533,
+        "radiation_usv": 0.3617
+      },
+      "alert": null,
+      "operator_note": "relay mast inspected by field tech"
+    },
+    {
+      "sensor_id": "SEN-589920",
+      "timestamp": "2026-04-21T11:07:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.506569696186947,
+        "lon": 47.78245508860282
+      },
+      "readings": {
+        "temperature_c": 40.71,
+        "humidity_pct": 19.35,
+        "pressure_hpa": 1001.12,
+        "vibration_g": 0.0868,
+        "radiation_usv": 0.4436
+      },
+      "alert": "THRESHOLD_EXCEEDED",
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-308657",
+      "timestamp": "2026-04-21T10:43:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.513906389612615,
+        "lon": 47.77651146015456
+      },
+      "readings": {
+        "temperature_c": 19.52,
+        "humidity_pct": 29.86,
+        "pressure_hpa": 1013.54,
+        "vibration_g": 0.8471,
+        "radiation_usv": 0.2587
+      },
+      "alert": null,
+      "operator_note": "battery swap completed"
+    },
+    {
+      "sensor_id": "SEN-933001",
+      "timestamp": "2026-04-21T08:23:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.500901482714927,
+        "lon": 47.78513453607462
+      },
+      "readings": {
+        "temperature_c": 38.58,
+        "humidity_pct": 83.3,
+        "pressure_hpa": 1021.91,
+        "vibration_g": 1.8909,
+        "radiation_usv": 0.1919
+      },
+      "alert": "THRESHOLD_EXCEEDED",
+      "operator_note": "requires manual verification at next patrol window"
+    },
+    {
+      "sensor_id": "SEN-231792",
+      "timestamp": "2026-04-21T07:49:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.513151182151105,
+        "lon": 47.780344521040966
+      },
+      "readings": {
+        "temperature_c": 41.66,
+        "humidity_pct": 72.77,
+        "pressure_hpa": 1005.28,
+        "vibration_g": 0.8343,
+        "radiation_usv": 0.4382
+      },
+      "alert": "THRESHOLD_EXCEEDED",
+      "operator_note": "requires manual verification at next patrol window"
+    },
+    {
+      "sensor_id": "SEN-198036",
+      "timestamp": "2026-04-21T09:40:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.501912548133635,
+        "lon": 47.77948662888485
+      },
+      "readings": {
+        "temperature_c": 22.39,
+        "humidity_pct": 29.39,
+        "pressure_hpa": 1002.11,
+        "vibration_g": 1.5392,
+        "radiation_usv": 0.0925
+      },
+      "alert": null,
+      "operator_note": "relay mast inspected by field tech"
+    },
+    {
+      "sensor_id": "SEN-200376",
+      "timestamp": "2026-04-21T08:25:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.51712080204114,
+        "lon": 47.77742973696026
+      },
+      "readings": {
+        "temperature_c": 18.14,
+        "humidity_pct": 84.31,
+        "pressure_hpa": 1007.26,
+        "vibration_g": 1.7163,
+        "radiation_usv": 0.2014
+      },
+      "alert": null,
+      "operator_note": "battery swap completed"
+    },
+    {
+      "sensor_id": "SEN-317041",
+      "timestamp": "2026-04-21T10:31:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.51624896121982,
+        "lon": 47.77233584676684
+      },
+      "readings": {
+        "temperature_c": 47.88,
+        "humidity_pct": 92.34,
+        "pressure_hpa": 991.63,
+        "vibration_g": 2.1282,
+        "radiation_usv": 0.4097
+      },
+      "alert": "THRESHOLD_EXCEEDED",
+      "operator_note": "requires manual verification at next patrol window"
+    },
+    {
+      "sensor_id": "SEN-475694",
+      "timestamp": "2026-04-21T10:01:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.49957461337953,
+        "lon": 47.78455524584952
+      },
+      "readings": {
+        "temperature_c": 43.58,
+        "humidity_pct": 66.07,
+        "pressure_hpa": 1021.51,
+        "vibration_g": 1.8541,
+        "radiation_usv": 0.4332
+      },
+      "alert": null,
+      "operator_note": "requires manual verification at next patrol window"
+    },
+    {
+      "sensor_id": "SEN-442496",
+      "timestamp": "2026-04-21T10:44:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.504164139348653,
+        "lon": 47.78189442823566
+      },
+      "readings": {
+        "temperature_c": 20.45,
+        "humidity_pct": 62.77,
+        "pressure_hpa": 1022.73,
+        "vibration_g": 1.0265,
+        "radiation_usv": 0.4115
+      },
+      "alert": "THRESHOLD_EXCEEDED",
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-436071",
+      "timestamp": "2026-04-21T06:19:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.499982767262047,
+        "lon": 47.770483854417755
+      },
+      "readings": {
+        "temperature_c": 27.4,
+        "humidity_pct": 87.67,
+        "pressure_hpa": 1001.57,
+        "vibration_g": 2.434,
+        "radiation_usv": 0.3839
+      },
+      "alert": null,
+      "operator_note": "nominal baseline maintained"
+    },
+    {
+      "sensor_id": "SEN-611892",
+      "timestamp": "2026-04-21T10:34:44.407960+00:00",
+      "location": {
+        "name": "Basra",
+        "lat": 30.501300364567257,
+        "lon": 47.77142610724479
+      },
+      "readings": {
+        "temperature_c": 20.05,
+        "humidity_pct": 78.05,
+        "pressure_hpa": 996.51,
+        "vibration_g": 2.4541,
+        "radiation_usv": 0.1561
+      },
+      "alert": null,
+      "operator_note": "relay mast inspected by field tech"
+    }
+  ]
+}
