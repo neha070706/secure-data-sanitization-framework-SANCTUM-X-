@@ -1,5 +1,4 @@
 streamlit==1.42.0
-pikepdf==9.4.2
 python-docx==1.1.2
 Pillow>=11.0.0
 jsonlines==4.0.0
