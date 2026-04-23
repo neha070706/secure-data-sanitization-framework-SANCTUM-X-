@@ -1,112 +1,93 @@
-# 🛡️ Secure Data Sanitization Framework
-### Air-Gap Transfer with Full Sanitization & Audit Trail
+# Secure Data Sanitization Framework (SANCTUM-X)
 
-> Hackathon Project — Cybersecurity Track
+Secure framework for transferring files across air-gapped environments with sanitization, encryption, and audit logging.
 
----
+## Overview
 
-## What It Does
+This project is a Streamlit-based security workflow for handling files before they move between isolated networks.
+It is designed to reduce the risk introduced by removable media and other controlled transfer paths.
 
-Transfers files safely between two **air-gapped networks** (completely isolated networks with no internet).  
-Every file is scanned, sanitized, encrypted, and logged before it physically crosses the gap.
+Core capabilities:
 
-**Real-world problem:** The Stuxnet worm (2010) destroyed Iranian nuclear centrifuges by exploiting
-the one weak point of air-gapped networks — the USB drives used to bring data in.
-This framework eliminates that attack surface.
-
----
+- File ingestion and inspection
+- Threat scanning for suspicious content and risky file types
+- Sanitization for PDFs, images, Office files, and plain text
+- Encrypted bundle creation for transfer
+- Tamper-evident audit logging
 
 ## Quick Start
 
 ```bash
-# 1. Install dependencies
 pip install -r requirements.txt
-
-# 2. Generate demo sample files
 python generate_samples.py
-
-# 3. Run the app
 streamlit run app/main.py
 ```
 
-Then open `http://localhost:8501` in your browser.
-
----
+Open `http://localhost:8501` in your browser.
 
 ## Project Structure
 
-```
+```text
 secure-sanitization-framework/
-├── app/
-│   ├── main.py              ← Streamlit UI (all 5 pages)
-│   ├── sanitizer.py         ← Core sanitization engine (PDF, image, Office, text)
-│   ├── transfer_manager.py  ← AES-256 bundle creation & decryption
-│   └── audit_logger.py      ← Immutable SHA-256 chained audit log
-├── rules/
-│   └── default_rules.json   ← Extension allowlist, threat keywords, size limits
-├── uploads/                 ← Incoming files (Network A — untrusted)
-├── quarantine/              ← Files that failed threat scan
-├── sanitized/               ← Clean output files + encrypted bundles
-├── audit_logs/              ← Tamper-evident JSONL audit trail
-├── tests/
-│   └── test_sanitizer.py    ← Unit tests (run with pytest)
-├── generate_samples.py      ← Creates demo files for the presentation
-└── requirements.txt
+|-- app/
+|   |-- main.py
+|   |-- sanitizer.py
+|   |-- transfer_manager.py
+|   |-- audit_logger.py
+|   `-- warehouse_connector.py
+|-- rules/
+|   `-- default_rules.json
+|-- uploads/
+|-- quarantine/
+|-- sanitized/
+|-- decrypted/
+|-- reports/
+|-- audit_logs/
+|-- sample_files/
+|-- tests/
+|   `-- test_sanitizer.py
+|-- generate_samples.py
+|-- requirements.txt
+`-- README.md
 ```
 
----
+## Processing Pipeline
 
-## The 5-Stage Pipeline
+1. Ingest files and calculate baseline hashes.
+2. Scan for blocked extensions, suspicious patterns, macros, and hidden content indicators.
+3. Sanitize supported file types by stripping metadata and removing active content where possible.
+4. Package output into an encrypted transfer bundle.
+5. Record each action in a chained audit log.
 
-| Stage | What Happens |
-|-------|-------------|
-| 1. Ingest | Upload files; SHA-256 baseline established |
-| 2. Threat Scan | Extension check · keyword scan · macro detection · LSB heuristic |
-| 3. Sanitize | Strip metadata · remove macros · re-encode images |
-| 4. Package | AES-256 encrypted bundle + SHA-256 manifest |
-| 5. Audit Log | Immutable chained log — every action recorded |
+## Supported Handling
 
----
-
-## Sanitization Details
-
-| File Type | Actions Applied |
-|-----------|----------------|
-| PDF | Strip author/GPS metadata, remove JavaScript actions |
-| JPEG / PNG | Strip EXIF (incl. GPS), re-encode to destroy steganography |
-| DOCX | Remove VBA macros, clear author properties |
-| XLSX | Remove VBA macros, reveal hidden sheets |
-| TXT / CSV | Strip null bytes and control characters |
-| EXE / BAT / PS1 | **Blocked and quarantined — never allowed** |
-
----
-
-## Running Tests
-
-```bash
-pip install pytest
-python -m pytest tests/ -v
-```
-
----
+| File type | Example actions |
+|---|---|
+| PDF | Remove metadata and unsafe actions |
+| PNG / JPEG | Strip EXIF and re-encode image data |
+| DOCX | Remove macro-related embedded content and clear properties |
+| XLSX | Remove VBA or embedded objects and expose hidden sheets when applicable |
+| TXT / CSV | Clean control characters and null bytes |
+| Executables / scripts | Block and quarantine |
 
 ## Tech Stack
 
-| Layer | Tool |
-|-------|------|
-| UI | Streamlit |
-| PDF sanitize | pikepdf |
-| Image sanitize | Pillow |
-| Office sanitize | python-docx + openpyxl |
-| Encryption | cryptography (Fernet / AES-256) |
-| Hashing | hashlib (SHA-256, built-in) |
-| Audit log | stdlib only — no external deps |
+- Streamlit
+- pikepdf
+- Pillow
+- python-docx
+- openpyxl
+- cryptography
+- jsonlines
 
----
+## Tests
 
-## Hackathon Pitch
+```bash
+python -m pytest tests/ -v
+```
 
-> *"80% of critical infrastructure runs on air-gapped networks.
-> The only way in is physical media — and that's exactly how Stuxnet attacked Iran.
-> We built an open-source framework that inspects, sanitizes, and cryptographically
-> verifies every byte before it crosses the air gap."*
+## Notes
+
+- The main UI lives in `app/main.py`.
+- Audit logs are stored under `audit_logs/`.
+- Generated encrypted bundles and sanitized outputs are stored under `sanitized/`.
