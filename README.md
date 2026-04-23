@@ -19,11 +19,18 @@ Core capabilities:
 
 ```bash
 pip install -r requirements.txt
+copy config\warehouse_config.example.json config\warehouse_config.json
 python generate_samples.py
 streamlit run app/main.py
 ```
 
 Open `http://localhost:8501` in your browser.
+
+For Windows PowerShell, you can also run:
+
+```powershell
+Copy-Item config\warehouse_config.example.json config\warehouse_config.json
+```
 
 ## Project Structure
 
@@ -91,3 +98,4 @@ python -m pytest tests/ -v
 - The main UI lives in `app/main.py`.
 - Audit logs are stored under `audit_logs/`.
 - Generated encrypted bundles and sanitized outputs are stored under `sanitized/`.
+- Local warehouse settings should be kept in `config/warehouse_config.json`, created from `config/warehouse_config.example.json`.
